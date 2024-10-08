@@ -21,9 +21,12 @@ def parse_args():
     parse.add_argument('--tensorboard', type=bool, default=True, help='enable tensorboard')
     parse.add_argument('--epoch', type=int, default=20)
     parse.add_argument('--seed', type=int, default=2021, help='random seed')
-    parse.add_argument('--model', type=str, default='bgr', help='models to be trained from [lossless]')  
+    parse.add_argument('--model', type=str, default='gcn', help='models to be trained from [lossless]')  
     parse.add_argument('--norm_a', type=float, default=1., help='normal distribution')                           
     parse.add_argument('--neg_ratio', type=int, default=1, help='the ratio of negative sampling')
     parse.add_argument('--eps', type=float, default=1e-20, help='epsilon in gumbel sampling')
+    
+    parse.add_argument('--hidden_dim', type=int, default=256, help='vae neuron number')
+    parse.add_argument('--latent_dim', type=int, default=256, help='dimension of latent variable z')
     
     return parse.parse_args() 

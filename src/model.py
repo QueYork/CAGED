@@ -5,6 +5,7 @@
 """
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 import src.powerboard as board
 import src.data_loader as data_loader
 import numpy as np
@@ -19,9 +20,9 @@ class BasicModel(nn.Module):
         raise NotImplementedError
 
 
-class BiGeaR_tch(BasicModel):
+class LightGCN(BasicModel):
     def __init__(self, dataset):
-        super(BiGeaR_tch, self).__init__()
+        super(LightGCN, self).__init__()
         self.dataset: data_loader.LoadData = dataset
 
         self.__init_model()
@@ -104,3 +105,99 @@ class BiGeaR_tch(BasicModel):
         scores = self.f(torch.matmul(user_embed, all_item_embed.t()))
         return scores
 
+
+class ConditionalVAE(nn.Module):
+    def __init__(self):
+        """
+        CVAE的构造函数，定义网络结构
+        :param input_dim: 输入x的维度
+        :param condition_dim: 条件u的维度
+        :param hidden_dim: 编码器/解码器隐藏层的维度
+        :param latent_dim: 潜在变量z的维度
+        """
+        super(ConditionalVAE, self).__init__()
+        
+        self.input_dim = board.args.dim
+        self.condition_dim = board.args.dim
+        self.hidden_dim = board.args.hidden_dim
+        self.latent_dim = board.args.latent_dim
+        
+        # 编码器部分：将x和u拼接在一起作为输入
+        self.encoder = nn.Sequential(
+            nn.Linear(self.input_dim + self.condition_dim, self.hidden_dim),
+            nn.ReLU()
+        )
+        
+        # 均值和对数方差
+        self.fc_mu = nn.Linear(self.hidden_dim, self.latent_dim)
+        self.fc_logvar = nn.Linear(self.hidden_dim, self.latent_dim)
+
+        # 解码器部分：将z和u拼接在一起作为输入
+        self.decoder = nn.Sequential(
+            nn.Linear(self.latent_dim + self.condition_dim, self.hidden_dim),
+            nn.ReLU(),
+            nn.Linear(self.hidden_dim, self.input_dim),
+            nn.Sigmoid()  # 输出范围[0, 1]
+        )
+
+    def encode(self, x, u):
+        """
+        编码器：将x和u一起编码到潜在空间
+        :param x: 输入数据
+        :param u: 条件数据
+        :return: 潜在空间的均值mu和对数方差logvar
+        """
+        x_u = torch.cat([x, u], dim=1)  # 将x和u拼接
+        h = self.encoder(x_u)
+        mu = self.fc_mu(h)
+        logvar = self.fc_logvar(h)
+        return mu, logvar
+
+    def reparameterize(self, mu, logvar):
+        """
+        重参数化采样
+        :param mu: 均值
+        :param logvar: 对数方差
+        :return: 潜在变量z
+        """
+        std = torch.exp(0.5 * logvar)
+        eps = torch.randn_like(std)
+        return mu + eps * std
+
+    def decode(self, z, u):
+        """
+        解码器：将z和u一起解码为重构的x
+        :param z: 潜在变量
+        :param u: 条件数据
+        :return: 重构的数据
+        """
+        z_u = torch.cat([z, u], dim=1)  # 将z和u拼接
+        return self.decoder(z_u)
+
+    def forward(self, x, u):
+        """
+        前向传播：编码 -> 重参数化 -> 解码
+        :param x: 输入数据
+        :param u: 条件数据
+        :return: 重构的x，均值mu和对数方差logvar
+        """
+        mu, logvar = self.encode(x, u)
+        z = self.reparameterize(mu, logvar)
+        recon_x = self.decode(z, u)
+        return recon_x, mu, logvar
+    
+    def loss(self, recon_x, x, mu, logvar):
+        """
+        计算CVAE的损失函数：重构损失和KL散度
+        :param recon_x: 重构的数据
+        :param x: 原始输入数据
+        :param mu: 潜在空间的均值
+        :param logvar: 潜在空间的对数方差
+        :return: 总损失（ELBO）
+        """
+        # 重构损失
+        recon_loss = F.binary_cross_entropy(recon_x, x, reduction='sum')
+        # KL散度
+        kld_loss = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
+        
+        return recon_loss + kld_loss

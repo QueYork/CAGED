@@ -25,13 +25,13 @@ import src.evals as evals
 import src.model as model
 
 MODEL = {
-    'bgr': model.BiGeaR_tch,
+    'gcn': model.LightGCN,
 }
 LOSS_F = {
-    'bgr': evals.BGRLoss_tch,
+    'gcn': evals.GCNLoss,
 }
 
-def pretrain():
+def main():
     utils.set_seed(board.SEED)
     print('--SEED--:', board.SEED)
 
@@ -104,4 +104,4 @@ def pretrain():
             summarizer.close()
 
 if __name__ == '__main__':
-    pretrain()
+    main()

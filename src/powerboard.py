@@ -25,7 +25,7 @@ if not os.path.exists(FILE_PATH):
 
 all_dataset = ['gowalla', 'yelp', 'book', 'movie', 'pinterest']
 batch_ranking_list = []
-all_model = ['bgr']
+all_model = ['gcn']
 GPU = torch.cuda.is_available()
 SEED = args.seed
 DEVICE = torch.device('cuda' if GPU else 'cpu')

@@ -9,7 +9,7 @@ import torch
 import src.utils as utils
 from torch import optim
 
-class BGRLoss_tch:
+class GCNLoss:
     def __init__(self, model):
         self.model = model
         self.weight_decay = board.args.weight
@@ -47,7 +47,7 @@ def Train_full(dataset, model, epoch, loss_f, neg_ratio=1, summarizer=None):
     num_batch = len(user_index) // board.args.train_batch + 1
     avg_loss = 0.
 
-    if board.args.model in ['bgr']:
+    if board.args.model in ['gcn']:
         batch = utils.minibatch(user_index, pos_item_index, neg_item_index, batch_size=board.args.train_batch)
         for batch_i, (b_user_idx, b_pos_item_idx, b_neg_item_idx) in enumerate(batch):
             loss_all_i = loss_f.stage(b_user_idx, b_pos_item_idx, b_neg_item_idx)
