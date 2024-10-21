@@ -1,13 +1,10 @@
-"""
-@author:chenyankai, queyue
-@file:evals.py
-@time:2024/6/28
-"""
 import src.powerboard as board
 import numpy as np
 import torch
 import src.utils as utils
 from torch import optim
+import scipy.sparse as sp
+import os
 
 class GCNLoss:
     def __init__(self, model):
@@ -27,8 +24,88 @@ class GCNLoss:
         self.opt.step()
 
         return loss.cpu().item()
+    
+class VAELoss:
+    def __init__(self, model):
+        self.model = model
+        self.lr = board.args.lr2
+        self.opt = optim.Adam(model.parameters(), lr=self.lr)
 
+    def stage(self, x, u):
+        recon_x, x_sig, mu, logvar = self.model(x, u)
+        recon, kld = self.model.loss(recon_x, x_sig, mu, logvar)
+        loss = recon + kld
+        self.opt.zero_grad()
+        loss.backward(retain_graph=True)
+        self.opt.step()
 
+        return loss.cpu().item(), recon.cpu().item(), kld.cpu().item()
+
+def Train_vae(data_loader, vae, user_emb, item_emb, loss_f, batch_size, epoch):          
+    vae.train()
+
+    loss = []
+    recon = []
+    kld = []
+    for batch in data_loader:
+        user, item = batch
+        user = user.to(device=board.DEVICE)
+        item = item.to(device=board.DEVICE)
+        
+        loss_user_side, recon_user_side, kld_user_side = loss_f.stage(x=item_emb[item], u=user_emb[user])
+        loss.append(loss_user_side)
+        recon.append(recon_user_side)
+        kld.append(kld_user_side)
+        
+        loss_item_side, recon_item_side, kld_item_side = loss_f.stage(x=user_emb[user], u=item_emb[item])
+        loss.append(loss_item_side)
+        recon.append(recon_item_side)
+        kld.append(kld_item_side)
+    
+    avg_loss = np.mean(loss) / batch_size
+    avg_recon = np.mean(recon) / batch_size
+    avg_kld  = np.mean(kld) / batch_size
+    
+    info = f'Avg loss: {avg_loss: .6f} | Avg recon loss: {avg_recon: .6f} | Avg kld loss: {avg_kld: .6f}'
+    
+    # vae.eval()
+    # with torch.no_grad():
+    #     print(f'CVAE EPOCH[{epoch + 1}/{num_epoch}]: Avg loss: {avg_loss: .3f} | Avg recon loss: {avg_recon: .3f} | Avg kld loss: {avg_kld: .3f}')
+    #     Is = [3264, 3361, 1251, 933, 998, 3784, 3657, 1192, 1640, 812, 110, 592, 1232, 2803, 918, 2615, 3896, 857]
+    #     u = user_emb[11].repeat((len(Is), 1))
+    #     i = item_emb[torch.LongTensor(Is).to(board.DEVICE)]
+    #     print(vae.get_scores(i, u))
+    # vae.train()
+    
+    return info
+    
+def Weight_Inference(vae, user_emb, item_emb, data_loader):
+    vae.eval()
+    
+    # Initial empty adj matrix
+    GraphSize = torch.Size([user_emb.shape[0] + item_emb.shape[0], user_emb.shape[0] + item_emb.shape[0]])  
+    Graph = torch.sparse.FloatTensor(torch.LongTensor([[], []]), torch.FloatTensor([]), GraphSize).to(device=board.DEVICE)
+    
+    for batch in data_loader:
+        user, item = batch
+        user = user.to(device=board.DEVICE)
+        item = item.to(device=board.DEVICE)
+        
+        # Scores condition on user/item
+        with torch.no_grad():
+            scores_con_user = vae.get_scores(x=item_emb[item], u=user_emb[user])
+            scores_con_item = vae.get_scores(x=user_emb[user], u=item_emb[item])
+        
+        # Concate 2 types of scores
+        item_coors = item + user_emb.shape[0]
+        row_coordinate = torch.concat((user, item_coors))
+        col_coordinate = torch.concat((item_coors, user))
+        scores = torch.concat((scores_con_user, scores_con_item))
+        
+        SubGraph = torch.sparse.FloatTensor(torch.stack([row_coordinate, col_coordinate]), scores, GraphSize)
+        Graph += SubGraph
+    return Graph
+    
 def Train_full(dataset, model, epoch, loss_f, neg_ratio=1, summarizer=None):
     model.train()
 
@@ -59,7 +136,7 @@ def Train_full(dataset, model, epoch, loss_f, neg_ratio=1, summarizer=None):
         
         info = f'all_loss:{avg_loss: .3f} | time cost-{time_info}|'
         if board.args.tensorboard:
-            summarizer.add_scalar(f'BGRLoss/Overall_loss', avg_loss, epoch)
+            summarizer.add_scalar(f'GCNLoss/Overall_loss', avg_loss, epoch)
             
     else:
         raise NotImplementedError('Wrong model type selection for training!')
@@ -103,7 +180,7 @@ def Inference(dataset, model, epoch, summarizer=None):
         users_list, score_list, true_items_list, pred_item_list = [], [], [], []
         num_batch = len(all_users) // test_batch_size + 1
         for batch_users in utils.minibatch(all_users, batch_size=test_batch_size):
-            pos_item_trans = dataset._get_user_posItems(batch_users)
+            pos_item_trans, _ = dataset._get_user_posItems(batch_users)
             ground_true = [test_dict[u] for u in batch_users]
             batch_users = torch.Tensor(batch_users).long()
             batch_users = batch_users.to(board.DEVICE)

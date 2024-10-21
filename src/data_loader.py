@@ -1,8 +1,3 @@
-"""
-@author:chenyankai, queyue
-@file:data_loader.py
-@time:2024/6/28
-"""
 import os
 from os.path import join
 import torch
@@ -87,7 +82,8 @@ class LoadData(Dataset):
         self.items_D[self.items_D == 0.] = 1.
 
         # pre-process
-        self.all_pos = self._get_user_posItems(list(range(self.n_users)))
+        self.all_pos, self.u_neighbors = self._get_user_posItems(list(range(self.n_users)))
+        # self.all_pos_user = self._get_item_posUsers(list(range(self.m_items)))
         
         self.test_dict = self._build_test()
         print(f"{self.data_name} is loaded")
@@ -107,6 +103,12 @@ class LoadData(Dataset):
     def get_all_pos(self):
         return self.all_pos
 
+    def get_neighbors(self):
+        return self.u_neighbors
+    
+    # def get_item_pos_user(self):
+    #     return self.all_pos_user
+
     def _build_test(self):
         """
         :return:
@@ -123,9 +125,19 @@ class LoadData(Dataset):
 
     def _get_user_posItems(self, user_index):
         pos_items = []
+        u_neighbors = torch.LongTensor([])
         for user in user_index:
-            pos_items.append(self.user_item_net[user].nonzero()[1])
-        return pos_items
+            u_pos_i = self.user_item_net[user].nonzero()[1]
+            u_neighbors = torch.concat([u_neighbors, torch.stack((torch.full((len(u_pos_i),), user), torch.tensor(u_pos_i)), dim=1)])
+            pos_items.append(u_pos_i)
+        return pos_items, u_neighbors
+    
+    # def _get_item_posUsers(self, item_index):
+    #     pos_users = []
+    #     graph = self.user_item_net.transpose()
+    #     for item in item_index:
+    #         pos_users.append(graph[item].nonzero()[1])
+    #     return pos_users
 
     def _convert_sp_mat_to_sp_tensor(self, matrix):
         """
@@ -169,8 +181,8 @@ class LoadData(Dataset):
                 sp.save_npz(os.path.join(self.path, 's_pre_adj_mat.npz'), norm_adj)
 
             self.Graph = self._convert_sp_mat_to_sp_tensor(norm_adj)
-            self.Graph = self.Graph.coalesce()
-        return self.Graph.to(board.DEVICE)
+            self.Graph = self.Graph.coalesce().to(board.DEVICE)
+        return self.Graph
 
 
     def load_graph_dropEdge(self):

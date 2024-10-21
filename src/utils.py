@@ -1,9 +1,3 @@
-"""
-@author:chenyankai, queyue
-@file:utils.py
-@time:2024/6/28
-"""
-
 import src.powerboard as board
 import torch
 import numpy as np
@@ -49,7 +43,7 @@ def set_seed(seed):
         torch.cuda.manual_seed(seed)
         torch.cuda.manual_seed_all(seed)
     torch.manual_seed(seed)
-
+    torch.backends.cudnn.deterministic = True 
 
 def get_weight_file_name():
     pass

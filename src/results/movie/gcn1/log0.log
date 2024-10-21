@@ -1,0 +1,601 @@
+2024-10-01 23:37:08,783 - root - INFO - Namespace(dataset='movie', topks=[20, 100], train_file='train.txt', test_file='test.txt', train_batch=2048, test_batch=100, layers=2, dim=256, lr=0.0005, weight=0.0001, tensorboard=True, epoch=200, seed=2021, model='bgr', norm_a=1.0, neg_ratio=1, eps=1e-20, reg=1.0)
+2024-10-01 23:37:20,491 - root - INFO - [testing at epoch-0]
+2024-10-01 23:37:20,491 - root - INFO - {'precision': array([0.15538907, 0.08843543]), 'recall': array([0.1146879 , 0.30155091]), 'ndcg': array([0.27817633, 0.47574046]), 'auc': array([0.])}
+2024-10-01 23:37:20,492 - root - INFO - EPOCH[1/200] all_loss: 0.581 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:37:31,179 - root - INFO - [testing at epoch-1]
+2024-10-01 23:37:31,179 - root - INFO - {'precision': array([0.1542798 , 0.08772351]), 'recall': array([0.11474263, 0.30321134]), 'ndcg': array([0.27675493, 0.47586034]), 'auc': array([0.])}
+2024-10-01 23:37:31,180 - root - INFO - EPOCH[2/200] all_loss: 0.325 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:37:41,855 - root - INFO - [testing at epoch-2]
+2024-10-01 23:37:41,856 - root - INFO - {'precision': array([0.155     , 0.08893046]), 'recall': array([0.11522861, 0.31001238]), 'ndcg': array([0.2764699 , 0.47950974]), 'auc': array([0.])}
+2024-10-01 23:37:41,856 - root - INFO - EPOCH[3/200] all_loss: 0.305 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:37:52,552 - root - INFO - [testing at epoch-3]
+2024-10-01 23:37:52,552 - root - INFO - {'precision': array([0.16182947, 0.09427815]), 'recall': array([0.12105828, 0.33024118]), 'ndcg': array([0.28219232, 0.49103282]), 'auc': array([0.])}
+2024-10-01 23:37:52,553 - root - INFO - EPOCH[4/200] all_loss: 0.288 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:38:03,322 - root - INFO - [testing at epoch-4]
+2024-10-01 23:38:03,322 - root - INFO - {'precision': array([0.17517384, 0.10253477]), 'recall': array([0.13298868, 0.36037052]), 'ndcg': array([0.29757734, 0.51071409]), 'auc': array([0.])}
+2024-10-01 23:38:03,323 - root - INFO - EPOCH[5/200] all_loss: 0.268 | time cost---Sampling: 0.13s--| 
+2024-10-01 23:38:13,977 - root - INFO - [testing at epoch-5]
+2024-10-01 23:38:13,977 - root - INFO - {'precision': array([0.19097682, 0.10934768]), 'recall': array([0.14614011, 0.3840295 ]), 'ndcg': array([0.32259936, 0.53532699]), 'auc': array([0.])}
+2024-10-01 23:38:13,978 - root - INFO - EPOCH[6/200] all_loss: 0.245 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:38:24,642 - root - INFO - [testing at epoch-6]
+2024-10-01 23:38:24,642 - root - INFO - {'precision': array([0.20256623, 0.11398344]), 'recall': array([0.15732274, 0.4012247 ]), 'ndcg': array([0.34036705, 0.55155356]), 'auc': array([0.])}
+2024-10-01 23:38:24,643 - root - INFO - EPOCH[7/200] all_loss: 0.228 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:38:35,265 - root - INFO - [testing at epoch-7]
+2024-10-01 23:38:35,266 - root - INFO - {'precision': array([0.21054636, 0.11722682]), 'recall': array([0.16505074, 0.41338277]), 'ndcg': array([0.3517854 , 0.56206768]), 'auc': array([0.])}
+2024-10-01 23:38:35,266 - root - INFO - EPOCH[8/200] all_loss: 0.215 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:38:46,016 - root - INFO - [testing at epoch-8]
+2024-10-01 23:38:46,017 - root - INFO - {'precision': array([0.21691225, 0.12006457]), 'recall': array([0.17164842, 0.42394691]), 'ndcg': array([0.35959415, 0.56945416]), 'auc': array([0.])}
+2024-10-01 23:38:46,018 - root - INFO - EPOCH[9/200] all_loss: 0.205 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:38:56,680 - root - INFO - [testing at epoch-9]
+2024-10-01 23:38:56,681 - root - INFO - {'precision': array([0.22250828, 0.12236258]), 'recall': array([0.17651222, 0.43410135]), 'ndcg': array([0.36575855, 0.57575072]), 'auc': array([0.])}
+2024-10-01 23:38:56,681 - root - INFO - EPOCH[10/200] all_loss: 0.196 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:39:07,319 - root - INFO - [testing at epoch-10]
+2024-10-01 23:39:07,319 - root - INFO - {'precision': array([0.22756623, 0.12442053]), 'recall': array([0.18169387, 0.44189029]), 'ndcg': array([0.37267192, 0.58229727]), 'auc': array([0.])}
+2024-10-01 23:39:07,320 - root - INFO - EPOCH[11/200] all_loss: 0.190 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:39:17,961 - root - INFO - [testing at epoch-11]
+2024-10-01 23:39:17,961 - root - INFO - {'precision': array([0.23309603, 0.12644205]), 'recall': array([0.18709544, 0.44983862]), 'ndcg': array([0.37882736, 0.5874699 ]), 'auc': array([0.])}
+2024-10-01 23:39:17,962 - root - INFO - EPOCH[12/200] all_loss: 0.184 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:39:28,606 - root - INFO - [testing at epoch-12]
+2024-10-01 23:39:28,606 - root - INFO - {'precision': array([0.23768212, 0.1285447 ]), 'recall': array([0.19114154, 0.45833421]), 'ndcg': array([0.38468993, 0.59355642]), 'auc': array([0.])}
+2024-10-01 23:39:28,607 - root - INFO - EPOCH[13/200] all_loss: 0.179 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:39:39,256 - root - INFO - [testing at epoch-13]
+2024-10-01 23:39:39,256 - root - INFO - {'precision': array([0.24090232, 0.1304404 ]), 'recall': array([0.19440319, 0.46576296]), 'ndcg': array([0.38815334, 0.59788315]), 'auc': array([0.])}
+2024-10-01 23:39:39,257 - root - INFO - EPOCH[14/200] all_loss: 0.172 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:39:49,880 - root - INFO - [testing at epoch-14]
+2024-10-01 23:39:49,881 - root - INFO - {'precision': array([0.24474338, 0.13211258]), 'recall': array([0.19819378, 0.47270151]), 'ndcg': array([0.39293265, 0.60263291]), 'auc': array([0.])}
+2024-10-01 23:39:49,881 - root - INFO - EPOCH[15/200] all_loss: 0.168 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:40:00,548 - root - INFO - [testing at epoch-15]
+2024-10-01 23:40:00,548 - root - INFO - {'precision': array([0.24831954, 0.13354801]), 'recall': array([0.20204576, 0.47811481]), 'ndcg': array([0.39717502, 0.60638426]), 'auc': array([0.])}
+2024-10-01 23:40:00,549 - root - INFO - EPOCH[16/200] all_loss: 0.165 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:40:11,280 - root - INFO - [testing at epoch-16]
+2024-10-01 23:40:11,280 - root - INFO - {'precision': array([0.25214404, 0.13484272]), 'recall': array([0.20588563, 0.48334622]), 'ndcg': array([0.40144127, 0.60956768]), 'auc': array([0.])}
+2024-10-01 23:40:11,281 - root - INFO - EPOCH[17/200] all_loss: 0.160 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:40:21,925 - root - INFO - [testing at epoch-17]
+2024-10-01 23:40:21,925 - root - INFO - {'precision': array([0.255     , 0.13609603]), 'recall': array([0.2086002 , 0.48855727]), 'ndcg': array([0.40445841, 0.61250356]), 'auc': array([0.])}
+2024-10-01 23:40:21,926 - root - INFO - EPOCH[18/200] all_loss: 0.157 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:40:32,599 - root - INFO - [testing at epoch-18]
+2024-10-01 23:40:32,599 - root - INFO - {'precision': array([0.25768212, 0.13723675]), 'recall': array([0.21089467, 0.4932375 ]), 'ndcg': array([0.40707206, 0.61512529]), 'auc': array([0.])}
+2024-10-01 23:40:32,600 - root - INFO - EPOCH[19/200] all_loss: 0.153 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:40:43,314 - root - INFO - [testing at epoch-19]
+2024-10-01 23:40:43,314 - root - INFO - {'precision': array([0.26010762, 0.13840066]), 'recall': array([0.21351911, 0.49781069]), 'ndcg': array([0.4100838 , 0.61813275]), 'auc': array([0.])}
+2024-10-01 23:40:43,315 - root - INFO - EPOCH[20/200] all_loss: 0.149 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:40:53,940 - root - INFO - [testing at epoch-20]
+2024-10-01 23:40:53,940 - root - INFO - {'precision': array([0.26245033, 0.13940232]), 'recall': array([0.21629725, 0.50148834]), 'ndcg': array([0.41264426, 0.62028228]), 'auc': array([0.])}
+2024-10-01 23:40:53,941 - root - INFO - EPOCH[21/200] all_loss: 0.146 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:41:04,720 - root - INFO - [testing at epoch-21]
+2024-10-01 23:41:04,720 - root - INFO - {'precision': array([0.2648096 , 0.14054967]), 'recall': array([0.21840508, 0.50610406]), 'ndcg': array([0.41518452, 0.62300224]), 'auc': array([0.])}
+2024-10-01 23:41:04,721 - root - INFO - EPOCH[22/200] all_loss: 0.143 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:41:15,390 - root - INFO - [testing at epoch-22]
+2024-10-01 23:41:15,391 - root - INFO - {'precision': array([0.2677649 , 0.14156291]), 'recall': array([0.2214388 , 0.50994058]), 'ndcg': array([0.41879119, 0.62567155]), 'auc': array([0.])}
+2024-10-01 23:41:15,392 - root - INFO - EPOCH[23/200] all_loss: 0.141 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:41:26,164 - root - INFO - [testing at epoch-23]
+2024-10-01 23:41:26,164 - root - INFO - {'precision': array([0.26961921, 0.14236589]), 'recall': array([0.22347556, 0.51343869]), 'ndcg': array([0.42079668, 0.62772271]), 'auc': array([0.])}
+2024-10-01 23:41:26,165 - root - INFO - EPOCH[24/200] all_loss: 0.138 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:41:36,861 - root - INFO - [testing at epoch-24]
+2024-10-01 23:41:36,862 - root - INFO - {'precision': array([0.27131623, 0.14317384]), 'recall': array([0.22500147, 0.51667175]), 'ndcg': array([0.422925  , 0.62997557]), 'auc': array([0.])}
+2024-10-01 23:41:36,862 - root - INFO - EPOCH[25/200] all_loss: 0.135 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:41:47,554 - root - INFO - [testing at epoch-25]
+2024-10-01 23:41:47,554 - root - INFO - {'precision': array([0.27359272, 0.14382616]), 'recall': array([0.22783331, 0.51889863]), 'ndcg': array([0.42536124, 0.6313463 ]), 'auc': array([0.])}
+2024-10-01 23:41:47,555 - root - INFO - EPOCH[26/200] all_loss: 0.132 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:41:58,284 - root - INFO - [testing at epoch-26]
+2024-10-01 23:41:58,284 - root - INFO - {'precision': array([0.27530629, 0.14459768]), 'recall': array([0.22970168, 0.52181354]), 'ndcg': array([0.42737395, 0.63296353]), 'auc': array([0.])}
+2024-10-01 23:41:58,285 - root - INFO - EPOCH[27/200] all_loss: 0.131 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:42:08,993 - root - INFO - [testing at epoch-27]
+2024-10-01 23:42:08,993 - root - INFO - {'precision': array([0.27686258, 0.14536589]), 'recall': array([0.23070882, 0.52487703]), 'ndcg': array([0.42883067, 0.63483471]), 'auc': array([0.])}
+2024-10-01 23:42:08,994 - root - INFO - EPOCH[28/200] all_loss: 0.129 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:42:19,736 - root - INFO - [testing at epoch-28]
+2024-10-01 23:42:19,736 - root - INFO - {'precision': array([0.27881623, 0.14614073]), 'recall': array([0.23248884, 0.52801339]), 'ndcg': array([0.42992067, 0.63574128]), 'auc': array([0.])}
+2024-10-01 23:42:19,737 - root - INFO - EPOCH[29/200] all_loss: 0.126 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:42:30,458 - root - INFO - [testing at epoch-29]
+2024-10-01 23:42:30,458 - root - INFO - {'precision': array([0.27990066, 0.14678477]), 'recall': array([0.23329911, 0.53021313]), 'ndcg': array([0.43126353, 0.63701893]), 'auc': array([0.])}
+2024-10-01 23:42:30,459 - root - INFO - EPOCH[30/200] all_loss: 0.123 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:42:41,169 - root - INFO - [testing at epoch-30]
+2024-10-01 23:42:41,169 - root - INFO - {'precision': array([0.28125828, 0.14734934]), 'recall': array([0.2349449 , 0.53255252]), 'ndcg': array([0.4334009 , 0.63889706]), 'auc': array([0.])}
+2024-10-01 23:42:41,170 - root - INFO - EPOCH[31/200] all_loss: 0.122 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:42:51,935 - root - INFO - [testing at epoch-31]
+2024-10-01 23:42:51,936 - root - INFO - {'precision': array([0.28243377, 0.1478957 ]), 'recall': array([0.23660446, 0.53413047]), 'ndcg': array([0.4347839 , 0.63986586]), 'auc': array([0.])}
+2024-10-01 23:42:51,936 - root - INFO - EPOCH[32/200] all_loss: 0.120 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:43:02,641 - root - INFO - [testing at epoch-32]
+2024-10-01 23:43:02,641 - root - INFO - {'precision': array([0.28385762, 0.14831457]), 'recall': array([0.23800605, 0.53570814]), 'ndcg': array([0.43648603, 0.64103114]), 'auc': array([0.])}
+2024-10-01 23:43:02,642 - root - INFO - EPOCH[33/200] all_loss: 0.118 | time cost---Sampling: 0.13s--| 
+2024-10-01 23:43:13,339 - root - INFO - [testing at epoch-33]
+2024-10-01 23:43:13,340 - root - INFO - {'precision': array([0.28477649, 0.14881788]), 'recall': array([0.23876497, 0.53734453]), 'ndcg': array([0.4375895 , 0.64224165]), 'auc': array([0.])}
+2024-10-01 23:43:13,340 - root - INFO - EPOCH[34/200] all_loss: 0.117 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:43:24,042 - root - INFO - [testing at epoch-34]
+2024-10-01 23:43:24,042 - root - INFO - {'precision': array([0.28587748, 0.14934272]), 'recall': array([0.2403474 , 0.53916068]), 'ndcg': array([0.43889749, 0.64316141]), 'auc': array([0.])}
+2024-10-01 23:43:24,043 - root - INFO - EPOCH[35/200] all_loss: 0.115 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:43:34,696 - root - INFO - [testing at epoch-35]
+2024-10-01 23:43:34,696 - root - INFO - {'precision': array([0.28595199, 0.14970861]), 'recall': array([0.24069683, 0.54063245]), 'ndcg': array([0.43861473, 0.64348803]), 'auc': array([0.])}
+2024-10-01 23:43:34,697 - root - INFO - EPOCH[36/200] all_loss: 0.113 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:43:45,350 - root - INFO - [testing at epoch-36]
+2024-10-01 23:43:45,350 - root - INFO - {'precision': array([0.28683775, 0.15017384]), 'recall': array([0.24140708, 0.5421571 ]), 'ndcg': array([0.43960315, 0.64464298]), 'auc': array([0.])}
+2024-10-01 23:43:45,351 - root - INFO - EPOCH[37/200] all_loss: 0.112 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:43:55,998 - root - INFO - [testing at epoch-37]
+2024-10-01 23:43:55,998 - root - INFO - {'precision': array([0.2880298 , 0.15051325]), 'recall': array([0.24299515, 0.54321324]), 'ndcg': array([0.44116663, 0.64556981]), 'auc': array([0.])}
+2024-10-01 23:43:55,999 - root - INFO - EPOCH[38/200] all_loss: 0.111 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:44:06,623 - root - INFO - [testing at epoch-38]
+2024-10-01 23:44:06,623 - root - INFO - {'precision': array([0.28793874, 0.15087417]), 'recall': array([0.24337356, 0.54460667]), 'ndcg': array([0.44153022, 0.64641496]), 'auc': array([0.])}
+2024-10-01 23:44:06,624 - root - INFO - EPOCH[39/200] all_loss: 0.110 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:44:17,241 - root - INFO - [testing at epoch-39]
+2024-10-01 23:44:17,241 - root - INFO - {'precision': array([0.28899007, 0.15117053]), 'recall': array([0.24415114, 0.54525904]), 'ndcg': array([0.44247532, 0.64700511]), 'auc': array([0.])}
+2024-10-01 23:44:17,242 - root - INFO - EPOCH[40/200] all_loss: 0.108 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:44:27,865 - root - INFO - [testing at epoch-40]
+2024-10-01 23:44:27,865 - root - INFO - {'precision': array([0.29004139, 0.15154967]), 'recall': array([0.24545587, 0.54673481]), 'ndcg': array([0.44361168, 0.64766062]), 'auc': array([0.])}
+2024-10-01 23:44:27,866 - root - INFO - EPOCH[41/200] all_loss: 0.107 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:44:38,497 - root - INFO - [testing at epoch-41]
+2024-10-01 23:44:38,497 - root - INFO - {'precision': array([0.29054636, 0.15184106]), 'recall': array([0.24606006, 0.54803913]), 'ndcg': array([0.44427859, 0.64831754]), 'auc': array([0.])}
+2024-10-01 23:44:38,498 - root - INFO - EPOCH[42/200] all_loss: 0.105 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:44:49,117 - root - INFO - [testing at epoch-42]
+2024-10-01 23:44:49,117 - root - INFO - {'precision': array([0.29097682, 0.15218543]), 'recall': array([0.24652127, 0.54877567]), 'ndcg': array([0.44481465, 0.6489438 ]), 'auc': array([0.])}
+2024-10-01 23:44:49,118 - root - INFO - EPOCH[43/200] all_loss: 0.104 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:44:59,730 - root - INFO - [testing at epoch-43]
+2024-10-01 23:44:59,731 - root - INFO - {'precision': array([0.29142384, 0.15246689]), 'recall': array([0.24674965, 0.5497718 ]), 'ndcg': array([0.44458605, 0.64895513]), 'auc': array([0.])}
+2024-10-01 23:44:59,731 - root - INFO - EPOCH[44/200] all_loss: 0.103 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:45:10,369 - root - INFO - [testing at epoch-44]
+2024-10-01 23:45:10,369 - root - INFO - {'precision': array([0.29210265, 0.15280298]), 'recall': array([0.24775262, 0.5509781 ]), 'ndcg': array([0.44590913, 0.65001372]), 'auc': array([0.])}
+2024-10-01 23:45:10,370 - root - INFO - EPOCH[45/200] all_loss: 0.102 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:45:21,016 - root - INFO - [testing at epoch-45]
+2024-10-01 23:45:21,016 - root - INFO - {'precision': array([0.29286424, 0.15297185]), 'recall': array([0.24813962, 0.55156036]), 'ndcg': array([0.44653559, 0.65055633]), 'auc': array([0.])}
+2024-10-01 23:45:21,017 - root - INFO - EPOCH[46/200] all_loss: 0.101 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:45:31,728 - root - INFO - [testing at epoch-46]
+2024-10-01 23:45:31,728 - root - INFO - {'precision': array([0.29340232, 0.15328808]), 'recall': array([0.2483686, 0.5528271]), 'ndcg': array([0.44706211, 0.65110787]), 'auc': array([0.])}
+2024-10-01 23:45:31,729 - root - INFO - EPOCH[47/200] all_loss: 0.099 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:45:42,405 - root - INFO - [testing at epoch-47]
+2024-10-01 23:45:42,405 - root - INFO - {'precision': array([0.29346854, 0.15345695]), 'recall': array([0.24881484, 0.55321278]), 'ndcg': array([0.44718611, 0.65136898]), 'auc': array([0.])}
+2024-10-01 23:45:42,406 - root - INFO - EPOCH[48/200] all_loss: 0.099 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:45:53,112 - root - INFO - [testing at epoch-48]
+2024-10-01 23:45:53,112 - root - INFO - {'precision': array([0.29388245, 0.15376159]), 'recall': array([0.2494597 , 0.55452102]), 'ndcg': array([0.44741502, 0.65171492]), 'auc': array([0.])}
+2024-10-01 23:45:53,113 - root - INFO - EPOCH[49/200] all_loss: 0.098 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:46:03,759 - root - INFO - [testing at epoch-49]
+2024-10-01 23:46:03,759 - root - INFO - {'precision': array([0.2945447 , 0.15400828]), 'recall': array([0.2501835 , 0.55520989]), 'ndcg': array([0.44779118, 0.65167847]), 'auc': array([0.])}
+2024-10-01 23:46:03,760 - root - INFO - EPOCH[50/200] all_loss: 0.097 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:46:14,392 - root - INFO - [testing at epoch-50]
+2024-10-01 23:46:14,392 - root - INFO - {'precision': array([0.29534768, 0.15428642]), 'recall': array([0.25127209, 0.55600581]), 'ndcg': array([0.4492036 , 0.65270479]), 'auc': array([0.])}
+2024-10-01 23:46:14,392 - root - INFO - EPOCH[51/200] all_loss: 0.096 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:46:25,007 - root - INFO - [testing at epoch-51]
+2024-10-01 23:46:25,007 - root - INFO - {'precision': array([0.29622517, 0.15443543]), 'recall': array([0.25220329, 0.5570109 ]), 'ndcg': array([0.44983036, 0.6531111 ]), 'auc': array([0.])}
+2024-10-01 23:46:25,008 - root - INFO - EPOCH[52/200] all_loss: 0.096 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:46:35,678 - root - INFO - [testing at epoch-52]
+2024-10-01 23:46:35,678 - root - INFO - {'precision': array([0.29671358, 0.15471854]), 'recall': array([0.25311736, 0.55800396]), 'ndcg': array([0.45052207, 0.65359185]), 'auc': array([0.])}
+2024-10-01 23:46:35,679 - root - INFO - EPOCH[53/200] all_loss: 0.095 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:46:46,347 - root - INFO - [testing at epoch-53]
+2024-10-01 23:46:46,347 - root - INFO - {'precision': array([0.29758278, 0.15479801]), 'recall': array([0.25387188, 0.55816795]), 'ndcg': array([0.45187945, 0.6542549 ]), 'auc': array([0.])}
+2024-10-01 23:46:46,348 - root - INFO - EPOCH[54/200] all_loss: 0.093 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:46:57,030 - root - INFO - [testing at epoch-54]
+2024-10-01 23:46:57,030 - root - INFO - {'precision': array([0.29765728, 0.15501656]), 'recall': array([0.2541064 , 0.55924632]), 'ndcg': array([0.45233054, 0.65492366]), 'auc': array([0.])}
+2024-10-01 23:46:57,031 - root - INFO - EPOCH[55/200] all_loss: 0.093 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:47:07,714 - root - INFO - [testing at epoch-55]
+2024-10-01 23:47:07,714 - root - INFO - {'precision': array([0.29778146, 0.15513411]), 'recall': array([0.25411343, 0.5594785 ]), 'ndcg': array([0.45223364, 0.65492193]), 'auc': array([0.])}
+2024-10-01 23:47:07,715 - root - INFO - EPOCH[56/200] all_loss: 0.092 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:47:18,426 - root - INFO - [testing at epoch-56]
+2024-10-01 23:47:18,426 - root - INFO - {'precision': array([0.29846026, 0.15547351]), 'recall': array([0.2545434 , 0.56060628]), 'ndcg': array([0.45285065, 0.65554446]), 'auc': array([0.])}
+2024-10-01 23:47:18,427 - root - INFO - EPOCH[57/200] all_loss: 0.091 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:47:29,171 - root - INFO - [testing at epoch-57]
+2024-10-01 23:47:29,171 - root - INFO - {'precision': array([0.29884106, 0.15561424]), 'recall': array([0.25440277, 0.56110049]), 'ndcg': array([0.45327  , 0.6560842]), 'auc': array([0.])}
+2024-10-01 23:47:29,172 - root - INFO - EPOCH[58/200] all_loss: 0.090 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:47:39,889 - root - INFO - [testing at epoch-58]
+2024-10-01 23:47:39,889 - root - INFO - {'precision': array([0.29857616, 0.15581291]), 'recall': array([0.25446101, 0.56228904]), 'ndcg': array([0.45265931, 0.65597381]), 'auc': array([0.])}
+2024-10-01 23:47:39,890 - root - INFO - EPOCH[59/200] all_loss: 0.089 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:47:50,599 - root - INFO - [testing at epoch-59]
+2024-10-01 23:47:50,599 - root - INFO - {'precision': array([0.29934603, 0.15596523]), 'recall': array([0.25512739, 0.5626535 ]), 'ndcg': array([0.4531193 , 0.65595287]), 'auc': array([0.])}
+2024-10-01 23:47:50,600 - root - INFO - EPOCH[60/200] all_loss: 0.089 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:48:01,350 - root - INFO - [testing at epoch-60]
+2024-10-01 23:48:01,350 - root - INFO - {'precision': array([0.29912252, 0.15611258]), 'recall': array([0.25519417, 0.56289636]), 'ndcg': array([0.45406229, 0.65719021]), 'auc': array([0.])}
+2024-10-01 23:48:01,351 - root - INFO - EPOCH[61/200] all_loss: 0.088 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:48:12,181 - root - INFO - [testing at epoch-61]
+2024-10-01 23:48:12,182 - root - INFO - {'precision': array([0.29950331, 0.15633609]), 'recall': array([0.2559155 , 0.56373777]), 'ndcg': array([0.45389681, 0.65687783]), 'auc': array([0.])}
+2024-10-01 23:48:12,183 - root - INFO - EPOCH[62/200] all_loss: 0.087 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:48:22,941 - root - INFO - [testing at epoch-62]
+2024-10-01 23:48:22,941 - root - INFO - {'precision': array([0.2995447 , 0.15651325]), 'recall': array([0.25596022, 0.56415592]), 'ndcg': array([0.45403806, 0.65722225]), 'auc': array([0.])}
+2024-10-01 23:48:22,942 - root - INFO - EPOCH[63/200] all_loss: 0.086 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:48:33,782 - root - INFO - [testing at epoch-63]
+2024-10-01 23:48:33,782 - root - INFO - {'precision': array([0.30000828, 0.1566755 ]), 'recall': array([0.25600371, 0.56500383]), 'ndcg': array([0.45410315, 0.65737299]), 'auc': array([0.])}
+2024-10-01 23:48:33,783 - root - INFO - EPOCH[64/200] all_loss: 0.087 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:48:44,478 - root - INFO - [testing at epoch-64]
+2024-10-01 23:48:44,478 - root - INFO - {'precision': array([0.30009106, 0.15680795]), 'recall': array([0.25621925, 0.56562922]), 'ndcg': array([0.45388576, 0.65732561]), 'auc': array([0.])}
+2024-10-01 23:48:44,479 - root - INFO - EPOCH[65/200] all_loss: 0.085 | time cost---Sampling: 0.13s--| 
+2024-10-01 23:48:55,143 - root - INFO - [testing at epoch-65]
+2024-10-01 23:48:55,144 - root - INFO - {'precision': array([0.3007202 , 0.15699007]), 'recall': array([0.25689124, 0.56604565]), 'ndcg': array([0.45461038, 0.65762272]), 'auc': array([0.])}
+2024-10-01 23:48:55,145 - root - INFO - EPOCH[66/200] all_loss: 0.085 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:49:05,808 - root - INFO - [testing at epoch-66]
+2024-10-01 23:49:05,808 - root - INFO - {'precision': array([0.30103477, 0.15711921]), 'recall': array([0.2569419 , 0.56625954]), 'ndcg': array([0.45483673, 0.65777495]), 'auc': array([0.])}
+2024-10-01 23:49:05,810 - root - INFO - EPOCH[67/200] all_loss: 0.084 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:49:16,454 - root - INFO - [testing at epoch-67]
+2024-10-01 23:49:16,454 - root - INFO - {'precision': array([0.30140728, 0.15727815]), 'recall': array([0.25768418, 0.56683815]), 'ndcg': array([0.45551406, 0.65832494]), 'auc': array([0.])}
+2024-10-01 23:49:16,455 - root - INFO - EPOCH[68/200] all_loss: 0.083 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:49:27,080 - root - INFO - [testing at epoch-68]
+2024-10-01 23:49:27,081 - root - INFO - {'precision': array([0.30107616, 0.15722682]), 'recall': array([0.25761046, 0.56694799]), 'ndcg': array([0.45532093, 0.65850506]), 'auc': array([0.])}
+2024-10-01 23:49:27,081 - root - INFO - EPOCH[69/200] all_loss: 0.083 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:49:37,789 - root - INFO - [testing at epoch-69]
+2024-10-01 23:49:37,789 - root - INFO - {'precision': array([0.30154801, 0.15745364]), 'recall': array([0.25800702, 0.56749451]), 'ndcg': array([0.45578829, 0.658767  ]), 'auc': array([0.])}
+2024-10-01 23:49:37,790 - root - INFO - EPOCH[70/200] all_loss: 0.082 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:49:48,441 - root - INFO - [testing at epoch-70]
+2024-10-01 23:49:48,441 - root - INFO - {'precision': array([0.30181291, 0.1577053 ]), 'recall': array([0.25818144, 0.56852639]), 'ndcg': array([0.45573295, 0.65879236]), 'auc': array([0.])}
+2024-10-01 23:49:48,442 - root - INFO - EPOCH[71/200] all_loss: 0.082 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:49:59,054 - root - INFO - [testing at epoch-71]
+2024-10-01 23:49:59,054 - root - INFO - {'precision': array([0.30228477, 0.15786424]), 'recall': array([0.25827341, 0.56924669]), 'ndcg': array([0.45581025, 0.6589307 ]), 'auc': array([0.])}
+2024-10-01 23:49:59,055 - root - INFO - EPOCH[72/200] all_loss: 0.081 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:50:09,685 - root - INFO - [testing at epoch-72]
+2024-10-01 23:50:09,685 - root - INFO - {'precision': array([0.30245861, 0.15786093]), 'recall': array([0.25839228, 0.56968766]), 'ndcg': array([0.45573773, 0.65894183]), 'auc': array([0.])}
+2024-10-01 23:50:09,686 - root - INFO - EPOCH[73/200] all_loss: 0.081 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:50:20,321 - root - INFO - [testing at epoch-73]
+2024-10-01 23:50:20,321 - root - INFO - {'precision': array([0.30269868, 0.15806126]), 'recall': array([0.25880751, 0.57031132]), 'ndcg': array([0.45645153, 0.65969167]), 'auc': array([0.])}
+2024-10-01 23:50:20,322 - root - INFO - EPOCH[74/200] all_loss: 0.080 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:50:30,939 - root - INFO - [testing at epoch-74]
+2024-10-01 23:50:30,940 - root - INFO - {'precision': array([0.30268212, 0.15811093]), 'recall': array([0.25907881, 0.57014822]), 'ndcg': array([0.45687656, 0.65989713]), 'auc': array([0.])}
+2024-10-01 23:50:30,941 - root - INFO - EPOCH[75/200] all_loss: 0.079 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:50:41,555 - root - INFO - [testing at epoch-75]
+2024-10-01 23:50:41,555 - root - INFO - {'precision': array([0.30291391, 0.15822517]), 'recall': array([0.25935665, 0.57038167]), 'ndcg': array([0.4571701, 0.6602258]), 'auc': array([0.])}
+2024-10-01 23:50:41,556 - root - INFO - EPOCH[76/200] all_loss: 0.078 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:50:52,222 - root - INFO - [testing at epoch-76]
+2024-10-01 23:50:52,222 - root - INFO - {'precision': array([0.30327815, 0.1581606 ]), 'recall': array([0.2598047 , 0.57047958]), 'ndcg': array([0.4574082 , 0.66018142]), 'auc': array([0.])}
+2024-10-01 23:50:52,223 - root - INFO - EPOCH[77/200] all_loss: 0.078 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:51:02,868 - root - INFO - [testing at epoch-77]
+2024-10-01 23:51:02,868 - root - INFO - {'precision': array([0.30341887, 0.15835596]), 'recall': array([0.26004293, 0.57072394]), 'ndcg': array([0.45780526, 0.6604638 ]), 'auc': array([0.])}
+2024-10-01 23:51:02,869 - root - INFO - EPOCH[78/200] all_loss: 0.078 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:51:13,508 - root - INFO - [testing at epoch-78]
+2024-10-01 23:51:13,508 - root - INFO - {'precision': array([0.30408113, 0.15837914]), 'recall': array([0.26079522, 0.57089091]), 'ndcg': array([0.45848835, 0.66060566]), 'auc': array([0.])}
+2024-10-01 23:51:13,509 - root - INFO - EPOCH[79/200] all_loss: 0.077 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:51:24,153 - root - INFO - [testing at epoch-79]
+2024-10-01 23:51:24,154 - root - INFO - {'precision': array([0.30399834, 0.15856291]), 'recall': array([0.26043999, 0.57154613]), 'ndcg': array([0.45830635, 0.66073953]), 'auc': array([0.])}
+2024-10-01 23:51:24,154 - root - INFO - EPOCH[80/200] all_loss: 0.077 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:51:34,767 - root - INFO - [testing at epoch-80]
+2024-10-01 23:51:34,767 - root - INFO - {'precision': array([0.30443709, 0.15868874]), 'recall': array([0.26076048, 0.57189775]), 'ndcg': array([0.4587459 , 0.66102129]), 'auc': array([0.])}
+2024-10-01 23:51:34,768 - root - INFO - EPOCH[81/200] all_loss: 0.076 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:51:45,398 - root - INFO - [testing at epoch-81]
+2024-10-01 23:51:45,398 - root - INFO - {'precision': array([0.30412252, 0.15867384]), 'recall': array([0.26070666, 0.5719464 ]), 'ndcg': array([0.45855634, 0.66107832]), 'auc': array([0.])}
+2024-10-01 23:51:45,399 - root - INFO - EPOCH[82/200] all_loss: 0.076 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:51:56,029 - root - INFO - [testing at epoch-82]
+2024-10-01 23:51:56,029 - root - INFO - {'precision': array([0.30486755, 0.1586904 ]), 'recall': array([0.26127485, 0.5719211 ]), 'ndcg': array([0.45898227, 0.66099281]), 'auc': array([0.])}
+2024-10-01 23:51:56,030 - root - INFO - EPOCH[83/200] all_loss: 0.075 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:52:06,675 - root - INFO - [testing at epoch-83]
+2024-10-01 23:52:06,675 - root - INFO - {'precision': array([0.30502483, 0.1587947 ]), 'recall': array([0.26139161, 0.57207278]), 'ndcg': array([0.45949486, 0.66143723]), 'auc': array([0.])}
+2024-10-01 23:52:06,676 - root - INFO - EPOCH[84/200] all_loss: 0.075 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:52:17,307 - root - INFO - [testing at epoch-84]
+2024-10-01 23:52:17,307 - root - INFO - {'precision': array([0.30481788, 0.15886424]), 'recall': array([0.26121322, 0.57256059]), 'ndcg': array([0.45914053, 0.66141117]), 'auc': array([0.])}
+2024-10-01 23:52:17,308 - root - INFO - EPOCH[85/200] all_loss: 0.074 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:52:27,987 - root - INFO - [testing at epoch-85]
+2024-10-01 23:52:27,987 - root - INFO - {'precision': array([0.30532285, 0.15900662]), 'recall': array([0.26181645, 0.57288023]), 'ndcg': array([0.45980963, 0.66174769]), 'auc': array([0.])}
+2024-10-01 23:52:27,988 - root - INFO - EPOCH[86/200] all_loss: 0.074 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:52:38,670 - root - INFO - [testing at epoch-86]
+2024-10-01 23:52:38,671 - root - INFO - {'precision': array([0.30531457, 0.15910762]), 'recall': array([0.26162811, 0.57286149]), 'ndcg': array([0.45950125, 0.66155111]), 'auc': array([0.])}
+2024-10-01 23:52:38,671 - root - INFO - EPOCH[87/200] all_loss: 0.074 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:52:49,343 - root - INFO - [testing at epoch-87]
+2024-10-01 23:52:49,343 - root - INFO - {'precision': array([0.30567881, 0.15929801]), 'recall': array([0.26168434, 0.57395564]), 'ndcg': array([0.45943805, 0.66167135]), 'auc': array([0.])}
+2024-10-01 23:52:49,344 - root - INFO - EPOCH[88/200] all_loss: 0.073 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:53:00,028 - root - INFO - [testing at epoch-88]
+2024-10-01 23:53:00,028 - root - INFO - {'precision': array([0.30508278, 0.15928477]), 'recall': array([0.26134168, 0.57361163]), 'ndcg': array([0.45958244, 0.6620105 ]), 'auc': array([0.])}
+2024-10-01 23:53:00,029 - root - INFO - EPOCH[89/200] all_loss: 0.073 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:53:10,741 - root - INFO - [testing at epoch-89]
+2024-10-01 23:53:10,741 - root - INFO - {'precision': array([0.3056457 , 0.15941391]), 'recall': array([0.26155121, 0.57425271]), 'ndcg': array([0.45965612, 0.66200467]), 'auc': array([0.])}
+2024-10-01 23:53:10,742 - root - INFO - EPOCH[90/200] all_loss: 0.072 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:53:21,457 - root - INFO - [testing at epoch-90]
+2024-10-01 23:53:21,457 - root - INFO - {'precision': array([0.3059851 , 0.15946026]), 'recall': array([0.26177999, 0.5743382 ]), 'ndcg': array([0.45999057, 0.66215431]), 'auc': array([0.])}
+2024-10-01 23:53:21,458 - root - INFO - EPOCH[91/200] all_loss: 0.072 | time cost---Sampling: 0.13s--| 
+2024-10-01 23:53:32,217 - root - INFO - [testing at epoch-91]
+2024-10-01 23:53:32,217 - root - INFO - {'precision': array([0.30604305, 0.15956954]), 'recall': array([0.26200079, 0.57452704]), 'ndcg': array([0.46000923, 0.6621143 ]), 'auc': array([0.])}
+2024-10-01 23:53:32,218 - root - INFO - EPOCH[92/200] all_loss: 0.071 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:53:42,963 - root - INFO - [testing at epoch-92]
+2024-10-01 23:53:42,963 - root - INFO - {'precision': array([0.30618377, 0.15971358]), 'recall': array([0.26227854, 0.57520308]), 'ndcg': array([0.46008134, 0.66222265]), 'auc': array([0.])}
+2024-10-01 23:53:42,964 - root - INFO - EPOCH[93/200] all_loss: 0.071 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:53:53,829 - root - INFO - [testing at epoch-93]
+2024-10-01 23:53:53,829 - root - INFO - {'precision': array([0.30627483, 0.1597202 ]), 'recall': array([0.26258664, 0.57553164]), 'ndcg': array([0.46034594, 0.66240713]), 'auc': array([0.])}
+2024-10-01 23:53:53,830 - root - INFO - EPOCH[94/200] all_loss: 0.070 | time cost---Sampling: 0.13s--| 
+2024-10-01 23:54:04,510 - root - INFO - [testing at epoch-94]
+2024-10-01 23:54:04,510 - root - INFO - {'precision': array([0.30659768, 0.15971689]), 'recall': array([0.26291859, 0.57497811]), 'ndcg': array([0.46109563, 0.6628033 ]), 'auc': array([0.])}
+2024-10-01 23:54:04,511 - root - INFO - EPOCH[95/200] all_loss: 0.070 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:54:15,225 - root - INFO - [testing at epoch-95]
+2024-10-01 23:54:15,225 - root - INFO - {'precision': array([0.3061755 , 0.15970033]), 'recall': array([0.26268968, 0.57469216]), 'ndcg': array([0.46040704, 0.66228746]), 'auc': array([0.])}
+2024-10-01 23:54:15,226 - root - INFO - EPOCH[96/200] all_loss: 0.070 | time cost---Sampling: 0.14s--| 
+2024-10-01 23:54:25,889 - root - INFO - [testing at epoch-96]
+2024-10-01 23:54:25,889 - root - INFO - {'precision': array([0.30599338, 0.15980132]), 'recall': array([0.26287733, 0.57527926]), 'ndcg': array([0.4605017 , 0.66261919]), 'auc': array([0.])}
+2024-10-01 23:54:25,890 - root - INFO - EPOCH[97/200] all_loss: 0.069 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:54:36,534 - root - INFO - [testing at epoch-97]
+2024-10-01 23:54:36,534 - root - INFO - {'precision': array([0.30661424, 0.15988411]), 'recall': array([0.26303229, 0.57582603]), 'ndcg': array([0.46050575, 0.66243021]), 'auc': array([0.])}
+2024-10-01 23:54:36,535 - root - INFO - EPOCH[98/200] all_loss: 0.069 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:54:47,135 - root - INFO - [testing at epoch-98]
+2024-10-01 23:54:47,135 - root - INFO - {'precision': array([0.30645695, 0.15996523]), 'recall': array([0.26270692, 0.57627737]), 'ndcg': array([0.46036543, 0.66259404]), 'auc': array([0.])}
+2024-10-01 23:54:47,136 - root - INFO - EPOCH[99/200] all_loss: 0.069 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:54:57,751 - root - INFO - [testing at epoch-99]
+2024-10-01 23:54:57,751 - root - INFO - {'precision': array([0.30634934, 0.15992219]), 'recall': array([0.26278704, 0.57588738]), 'ndcg': array([0.46011551, 0.662296  ]), 'auc': array([0.])}
+2024-10-01 23:54:57,752 - root - INFO - EPOCH[100/200] all_loss: 0.068 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:55:08,382 - root - INFO - [testing at epoch-100]
+2024-10-01 23:55:08,382 - root - INFO - {'precision': array([0.30621689, 0.1600149 ]), 'recall': array([0.26287311, 0.57612033]), 'ndcg': array([0.46030051, 0.66264897]), 'auc': array([0.])}
+2024-10-01 23:55:08,383 - root - INFO - EPOCH[101/200] all_loss: 0.068 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:55:18,994 - root - INFO - [testing at epoch-101]
+2024-10-01 23:55:18,994 - root - INFO - {'precision': array([0.30624172, 0.1600894 ]), 'recall': array([0.26262148, 0.57633739]), 'ndcg': array([0.46019781, 0.6626521 ]), 'auc': array([0.])}
+2024-10-01 23:55:18,995 - root - INFO - EPOCH[102/200] all_loss: 0.068 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:55:29,610 - root - INFO - [testing at epoch-102]
+2024-10-01 23:55:29,610 - root - INFO - {'precision': array([0.30677152, 0.16002815]), 'recall': array([0.26289741, 0.57616071]), 'ndcg': array([0.46071707, 0.66272622]), 'auc': array([0.])}
+2024-10-01 23:55:29,611 - root - INFO - EPOCH[103/200] all_loss: 0.067 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:55:40,228 - root - INFO - [testing at epoch-103]
+2024-10-01 23:55:40,228 - root - INFO - {'precision': array([0.30667219, 0.1601755 ]), 'recall': array([0.26275223, 0.57671896]), 'ndcg': array([0.4599988, 0.6623007]), 'auc': array([0.])}
+2024-10-01 23:55:40,229 - root - INFO - EPOCH[104/200] all_loss: 0.067 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:55:50,841 - root - INFO - [testing at epoch-104]
+2024-10-01 23:55:50,841 - root - INFO - {'precision': array([0.30655629, 0.16016225]), 'recall': array([0.26236902, 0.57648084]), 'ndcg': array([0.45999269, 0.66238816]), 'auc': array([0.])}
+2024-10-01 23:55:50,842 - root - INFO - EPOCH[105/200] all_loss: 0.066 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:56:01,484 - root - INFO - [testing at epoch-105]
+2024-10-01 23:56:01,485 - root - INFO - {'precision': array([0.30673013, 0.16012748]), 'recall': array([0.26268462, 0.57695603]), 'ndcg': array([0.46019801, 0.66258141]), 'auc': array([0.])}
+2024-10-01 23:56:01,485 - root - INFO - EPOCH[106/200] all_loss: 0.066 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:56:12,128 - root - INFO - [testing at epoch-106]
+2024-10-01 23:56:12,129 - root - INFO - {'precision': array([0.30677152, 0.1602053 ]), 'recall': array([0.26264789, 0.57695408]), 'ndcg': array([0.45985756, 0.66229742]), 'auc': array([0.])}
+2024-10-01 23:56:12,129 - root - INFO - EPOCH[107/200] all_loss: 0.066 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:56:22,781 - root - INFO - [testing at epoch-107]
+2024-10-01 23:56:22,781 - root - INFO - {'precision': array([0.30693709, 0.16026325]), 'recall': array([0.26289376, 0.57661779]), 'ndcg': array([0.46061039, 0.66283339]), 'auc': array([0.])}
+2024-10-01 23:56:22,782 - root - INFO - EPOCH[108/200] all_loss: 0.066 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:56:33,439 - root - INFO - [testing at epoch-108]
+2024-10-01 23:56:33,439 - root - INFO - {'precision': array([0.30628311, 0.16031291]), 'recall': array([0.26241015, 0.57698332]), 'ndcg': array([0.45973583, 0.66253375]), 'auc': array([0.])}
+2024-10-01 23:56:33,440 - root - INFO - EPOCH[109/200] all_loss: 0.066 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:56:44,086 - root - INFO - [testing at epoch-109]
+2024-10-01 23:56:44,086 - root - INFO - {'precision': array([0.30669702, 0.16042053]), 'recall': array([0.26277072, 0.57734789]), 'ndcg': array([0.45998957, 0.66256632]), 'auc': array([0.])}
+2024-10-01 23:56:44,087 - root - INFO - EPOCH[110/200] all_loss: 0.065 | time cost---Sampling: 0.13s--| 
+2024-10-01 23:56:54,709 - root - INFO - [testing at epoch-110]
+2024-10-01 23:56:54,709 - root - INFO - {'precision': array([0.30684603, 0.16039238]), 'recall': array([0.26280333, 0.57707132]), 'ndcg': array([0.4597524, 0.6621571]), 'auc': array([0.])}
+2024-10-01 23:56:54,710 - root - INFO - EPOCH[111/200] all_loss: 0.065 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:57:05,361 - root - INFO - [testing at epoch-111]
+2024-10-01 23:57:05,361 - root - INFO - {'precision': array([0.30662252, 0.16036755]), 'recall': array([0.26267645, 0.57731149]), 'ndcg': array([0.4596563 , 0.66226723]), 'auc': array([0.])}
+2024-10-01 23:57:05,362 - root - INFO - EPOCH[112/200] all_loss: 0.064 | time cost---Sampling: 0.11s--| 
+2024-10-01 23:57:15,994 - root - INFO - [testing at epoch-112]
+2024-10-01 23:57:15,994 - root - INFO - {'precision': array([0.3068957 , 0.16043046]), 'recall': array([0.26261541, 0.57722003]), 'ndcg': array([0.45991222, 0.66248927]), 'auc': array([0.])}
+2024-10-01 23:57:15,995 - root - INFO - EPOCH[113/200] all_loss: 0.064 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:57:26,637 - root - INFO - [testing at epoch-113]
+2024-10-01 23:57:26,637 - root - INFO - {'precision': array([0.30691225, 0.16047185]), 'recall': array([0.26294281, 0.57715742]), 'ndcg': array([0.46005372, 0.66245032]), 'auc': array([0.])}
+2024-10-01 23:57:26,638 - root - INFO - EPOCH[114/200] all_loss: 0.064 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:57:37,303 - root - INFO - [testing at epoch-114]
+2024-10-01 23:57:37,303 - root - INFO - {'precision': array([0.30694536, 0.16046026]), 'recall': array([0.26324777, 0.5771819 ]), 'ndcg': array([0.45983403, 0.66212884]), 'auc': array([0.])}
+2024-10-01 23:57:37,304 - root - INFO - EPOCH[115/200] all_loss: 0.064 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:57:47,965 - root - INFO - [testing at epoch-115]
+2024-10-01 23:57:47,965 - root - INFO - {'precision': array([0.30655629, 0.16048344]), 'recall': array([0.26257545, 0.57691826]), 'ndcg': array([0.45986754, 0.66245615]), 'auc': array([0.])}
+2024-10-01 23:57:47,966 - root - INFO - EPOCH[116/200] all_loss: 0.063 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:57:58,636 - root - INFO - [testing at epoch-116]
+2024-10-01 23:57:58,636 - root - INFO - {'precision': array([0.3065149 , 0.16046026]), 'recall': array([0.26272848, 0.5775121 ]), 'ndcg': array([0.45949275, 0.66230689]), 'auc': array([0.])}
+2024-10-01 23:57:58,637 - root - INFO - EPOCH[117/200] all_loss: 0.063 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:58:09,404 - root - INFO - [testing at epoch-117]
+2024-10-01 23:58:09,405 - root - INFO - {'precision': array([0.3067053 , 0.16043212]), 'recall': array([0.26333734, 0.57734554]), 'ndcg': array([0.45979638, 0.66223719]), 'auc': array([0.])}
+2024-10-01 23:58:09,405 - root - INFO - EPOCH[118/200] all_loss: 0.063 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:58:20,198 - root - INFO - [testing at epoch-118]
+2024-10-01 23:58:20,198 - root - INFO - {'precision': array([0.30703642, 0.16046523]), 'recall': array([0.26344281, 0.57750083]), 'ndcg': array([0.46002294, 0.66235279]), 'auc': array([0.])}
+2024-10-01 23:58:20,199 - root - INFO - EPOCH[119/200] all_loss: 0.062 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:58:30,918 - root - INFO - [testing at epoch-119]
+2024-10-01 23:58:30,918 - root - INFO - {'precision': array([0.30759106, 0.1604702 ]), 'recall': array([0.26395426, 0.57727074]), 'ndcg': array([0.46107709, 0.66278321]), 'auc': array([0.])}
+2024-10-01 23:58:30,919 - root - INFO - EPOCH[120/200] all_loss: 0.062 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:58:41,618 - root - INFO - [testing at epoch-120]
+2024-10-01 23:58:41,618 - root - INFO - {'precision': array([0.30708609, 0.16036258]), 'recall': array([0.26357467, 0.57678791]), 'ndcg': array([0.46084829, 0.66289997]), 'auc': array([0.])}
+2024-10-01 23:58:41,619 - root - INFO - EPOCH[121/200] all_loss: 0.062 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:58:52,341 - root - INFO - [testing at epoch-121]
+2024-10-01 23:58:52,341 - root - INFO - {'precision': array([0.30702815, 0.16035762]), 'recall': array([0.2631326 , 0.57696004]), 'ndcg': array([0.460465  , 0.66274869]), 'auc': array([0.])}
+2024-10-01 23:58:52,342 - root - INFO - EPOCH[122/200] all_loss: 0.062 | time cost---Sampling: 0.13s--| 
+2024-10-01 23:59:03,048 - root - INFO - [testing at epoch-122]
+2024-10-01 23:59:03,048 - root - INFO - {'precision': array([0.30710265, 0.16046192]), 'recall': array([0.26340612, 0.57697626]), 'ndcg': array([0.46076684, 0.66291961]), 'auc': array([0.])}
+2024-10-01 23:59:03,049 - root - INFO - EPOCH[123/200] all_loss: 0.061 | time cost---Sampling: 0.13s--| 
+2024-10-01 23:59:13,759 - root - INFO - [testing at epoch-123]
+2024-10-01 23:59:13,759 - root - INFO - {'precision': array([0.30696192, 0.16050828]), 'recall': array([0.26315549, 0.57725323]), 'ndcg': array([0.46070566, 0.66312498]), 'auc': array([0.])}
+2024-10-01 23:59:13,760 - root - INFO - EPOCH[124/200] all_loss: 0.061 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:59:24,505 - root - INFO - [testing at epoch-124]
+2024-10-01 23:59:24,505 - root - INFO - {'precision': array([0.30714404, 0.16055629]), 'recall': array([0.26314154, 0.57737924]), 'ndcg': array([0.46066523, 0.66308045]), 'auc': array([0.])}
+2024-10-01 23:59:24,506 - root - INFO - EPOCH[125/200] all_loss: 0.061 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:59:35,187 - root - INFO - [testing at epoch-125]
+2024-10-01 23:59:35,188 - root - INFO - {'precision': array([0.30688742, 0.16055132]), 'recall': array([0.26304628, 0.57759134]), 'ndcg': array([0.46067904, 0.66323337]), 'auc': array([0.])}
+2024-10-01 23:59:35,188 - root - INFO - EPOCH[126/200] all_loss: 0.061 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:59:45,834 - root - INFO - [testing at epoch-126]
+2024-10-01 23:59:45,834 - root - INFO - {'precision': array([0.3067798 , 0.16057119]), 'recall': array([0.26308376, 0.57749205]), 'ndcg': array([0.46027877, 0.66290491]), 'auc': array([0.])}
+2024-10-01 23:59:45,835 - root - INFO - EPOCH[127/200] all_loss: 0.060 | time cost---Sampling: 0.12s--| 
+2024-10-01 23:59:56,518 - root - INFO - [testing at epoch-127]
+2024-10-01 23:59:56,518 - root - INFO - {'precision': array([0.30656457, 0.16051656]), 'recall': array([0.26300875, 0.57732679]), 'ndcg': array([0.46036161, 0.66301748]), 'auc': array([0.])}
+2024-10-01 23:59:56,519 - root - INFO - EPOCH[128/200] all_loss: 0.061 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:00:07,167 - root - INFO - [testing at epoch-128]
+2024-10-02 00:00:07,168 - root - INFO - {'precision': array([0.30726821, 0.1605596 ]), 'recall': array([0.26299521, 0.57748363]), 'ndcg': array([0.46056233, 0.66313295]), 'auc': array([0.])}
+2024-10-02 00:00:07,169 - root - INFO - EPOCH[129/200] all_loss: 0.060 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:00:17,796 - root - INFO - [testing at epoch-129]
+2024-10-02 00:00:17,796 - root - INFO - {'precision': array([0.30705298, 0.16057119]), 'recall': array([0.26241976, 0.57736932]), 'ndcg': array([0.46043639, 0.66312979]), 'auc': array([0.])}
+2024-10-02 00:00:17,797 - root - INFO - EPOCH[130/200] all_loss: 0.060 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:00:28,424 - root - INFO - [testing at epoch-130]
+2024-10-02 00:00:28,425 - root - INFO - {'precision': array([0.30697848, 0.16060265]), 'recall': array([0.26283306, 0.57737596]), 'ndcg': array([0.46010976, 0.66268751]), 'auc': array([0.])}
+2024-10-02 00:00:28,426 - root - INFO - EPOCH[131/200] all_loss: 0.060 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:00:39,052 - root - INFO - [testing at epoch-131]
+2024-10-02 00:00:39,052 - root - INFO - {'precision': array([0.30739238, 0.16063411]), 'recall': array([0.26364353, 0.57723638]), 'ndcg': array([0.46095808, 0.66298724]), 'auc': array([0.])}
+2024-10-02 00:00:39,053 - root - INFO - EPOCH[132/200] all_loss: 0.059 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:00:49,667 - root - INFO - [testing at epoch-132]
+2024-10-02 00:00:49,667 - root - INFO - {'precision': array([0.30699503, 0.16058278]), 'recall': array([0.26310013, 0.57726906]), 'ndcg': array([0.4603422 , 0.66266139]), 'auc': array([0.])}
+2024-10-02 00:00:49,668 - root - INFO - EPOCH[133/200] all_loss: 0.059 | time cost---Sampling: 0.13s--| 
+2024-10-02 00:01:00,283 - root - INFO - [testing at epoch-133]
+2024-10-02 00:01:00,283 - root - INFO - {'precision': array([0.3072351 , 0.16064404]), 'recall': array([0.26319464, 0.57729876]), 'ndcg': array([0.46040188, 0.66262294]), 'auc': array([0.])}
+2024-10-02 00:01:00,284 - root - INFO - EPOCH[134/200] all_loss: 0.059 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:01:10,993 - root - INFO - [testing at epoch-134]
+2024-10-02 00:01:10,993 - root - INFO - {'precision': array([0.30710265, 0.16050662]), 'recall': array([0.26354747, 0.57671526]), 'ndcg': array([0.4608256 , 0.66284662]), 'auc': array([0.])}
+2024-10-02 00:01:10,994 - root - INFO - EPOCH[135/200] all_loss: 0.058 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:01:21,715 - root - INFO - [testing at epoch-135]
+2024-10-02 00:01:21,715 - root - INFO - {'precision': array([0.30732616, 0.16048675]), 'recall': array([0.26325755, 0.57684542]), 'ndcg': array([0.46054679, 0.66260553]), 'auc': array([0.])}
+2024-10-02 00:01:21,716 - root - INFO - EPOCH[136/200] all_loss: 0.058 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:01:32,346 - root - INFO - [testing at epoch-136]
+2024-10-02 00:01:32,346 - root - INFO - {'precision': array([0.30709437, 0.16053477]), 'recall': array([0.26309206, 0.57719565]), 'ndcg': array([0.4602242 , 0.66264577]), 'auc': array([0.])}
+2024-10-02 00:01:32,347 - root - INFO - EPOCH[137/200] all_loss: 0.058 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:01:43,102 - root - INFO - [testing at epoch-137]
+2024-10-02 00:01:43,102 - root - INFO - {'precision': array([0.30694536, 0.16049007]), 'recall': array([0.2628955 , 0.57693081]), 'ndcg': array([0.45991446, 0.66232486]), 'auc': array([0.])}
+2024-10-02 00:01:43,103 - root - INFO - EPOCH[138/200] all_loss: 0.058 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:01:53,710 - root - INFO - [testing at epoch-138]
+2024-10-02 00:01:53,711 - root - INFO - {'precision': array([0.30692053, 0.16047351]), 'recall': array([0.26311271, 0.57679467]), 'ndcg': array([0.46010298, 0.66235086]), 'auc': array([0.])}
+2024-10-02 00:01:53,711 - root - INFO - EPOCH[139/200] all_loss: 0.058 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:02:04,333 - root - INFO - [testing at epoch-139]
+2024-10-02 00:02:04,333 - root - INFO - {'precision': array([0.30679636, 0.16043709]), 'recall': array([0.26320368, 0.57651203]), 'ndcg': array([0.4601321 , 0.66230766]), 'auc': array([0.])}
+2024-10-02 00:02:04,334 - root - INFO - EPOCH[140/200] all_loss: 0.057 | time cost---Sampling: 0.11s--| 
+2024-10-02 00:02:14,977 - root - INFO - [testing at epoch-140]
+2024-10-02 00:02:14,978 - root - INFO - {'precision': array([0.30661424, 0.16044536]), 'recall': array([0.2628108 , 0.57629402]), 'ndcg': array([0.46028753, 0.66258953]), 'auc': array([0.])}
+2024-10-02 00:02:14,978 - root - INFO - EPOCH[141/200] all_loss: 0.057 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:02:25,596 - root - INFO - [testing at epoch-141]
+2024-10-02 00:02:25,596 - root - INFO - {'precision': array([0.30629139, 0.16039404]), 'recall': array([0.26261847, 0.5762968 ]), 'ndcg': array([0.45930296, 0.66188223]), 'auc': array([0.])}
+2024-10-02 00:02:25,597 - root - INFO - EPOCH[142/200] all_loss: 0.057 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:02:36,234 - root - INFO - [testing at epoch-142]
+2024-10-02 00:02:36,234 - root - INFO - {'precision': array([0.30618377, 0.16039238]), 'recall': array([0.26259758, 0.57618938]), 'ndcg': array([0.45925762, 0.66183332]), 'auc': array([0.])}
+2024-10-02 00:02:36,235 - root - INFO - EPOCH[143/200] all_loss: 0.057 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:02:46,933 - root - INFO - [testing at epoch-143]
+2024-10-02 00:02:46,933 - root - INFO - {'precision': array([0.30629139, 0.16034603]), 'recall': array([0.26269377, 0.57646413]), 'ndcg': array([0.45902127, 0.66166957]), 'auc': array([0.])}
+2024-10-02 00:02:46,934 - root - INFO - EPOCH[144/200] all_loss: 0.056 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:02:57,564 - root - INFO - [testing at epoch-144]
+2024-10-02 00:02:57,564 - root - INFO - {'precision': array([0.30580298, 0.16034768]), 'recall': array([0.26240541, 0.57641475]), 'ndcg': array([0.45883963, 0.66184697]), 'auc': array([0.])}
+2024-10-02 00:02:57,565 - root - INFO - EPOCH[145/200] all_loss: 0.056 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:03:08,205 - root - INFO - [testing at epoch-145]
+2024-10-02 00:03:08,206 - root - INFO - {'precision': array([0.30606788, 0.16025828]), 'recall': array([0.26262461, 0.57621227]), 'ndcg': array([0.45922976, 0.66198429]), 'auc': array([0.])}
+2024-10-02 00:03:08,206 - root - INFO - EPOCH[146/200] all_loss: 0.057 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:03:18,873 - root - INFO - [testing at epoch-146]
+2024-10-02 00:03:18,873 - root - INFO - {'precision': array([0.30596026, 0.16020199]), 'recall': array([0.26236373, 0.57549801]), 'ndcg': array([0.45908331, 0.66172315]), 'auc': array([0.])}
+2024-10-02 00:03:18,874 - root - INFO - EPOCH[147/200] all_loss: 0.056 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:03:29,542 - root - INFO - [testing at epoch-147]
+2024-10-02 00:03:29,542 - root - INFO - {'precision': array([0.30616722, 0.16026159]), 'recall': array([0.26287332, 0.57603754]), 'ndcg': array([0.45925045, 0.66172713]), 'auc': array([0.])}
+2024-10-02 00:03:29,543 - root - INFO - EPOCH[148/200] all_loss: 0.056 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:03:40,232 - root - INFO - [testing at epoch-148]
+2024-10-02 00:03:40,233 - root - INFO - {'precision': array([0.30610099, 0.16024503]), 'recall': array([0.26262547, 0.57577709]), 'ndcg': array([0.45907385, 0.66167471]), 'auc': array([0.])}
+2024-10-02 00:03:40,234 - root - INFO - EPOCH[149/200] all_loss: 0.056 | time cost---Sampling: 0.11s--| 
+2024-10-02 00:03:50,937 - root - INFO - [testing at epoch-149]
+2024-10-02 00:03:50,937 - root - INFO - {'precision': array([0.30630795, 0.16020364]), 'recall': array([0.26255164, 0.57614797]), 'ndcg': array([0.45901327, 0.66164936]), 'auc': array([0.])}
+2024-10-02 00:03:50,938 - root - INFO - EPOCH[150/200] all_loss: 0.056 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:04:01,731 - root - INFO - [testing at epoch-150]
+2024-10-02 00:04:01,731 - root - INFO - {'precision': array([0.30621689, 0.16011589]), 'recall': array([0.2624538 , 0.57550422]), 'ndcg': array([0.45853266, 0.66102314]), 'auc': array([0.])}
+2024-10-02 00:04:01,732 - root - INFO - EPOCH[151/200] all_loss: 0.055 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:04:12,426 - root - INFO - [testing at epoch-151]
+2024-10-02 00:04:12,427 - root - INFO - {'precision': array([0.30654801, 0.16008444]), 'recall': array([0.26300486, 0.57514738]), 'ndcg': array([0.45960724, 0.66154252]), 'auc': array([0.])}
+2024-10-02 00:04:12,427 - root - INFO - EPOCH[152/200] all_loss: 0.055 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:04:23,152 - root - INFO - [testing at epoch-152]
+2024-10-02 00:04:23,152 - root - INFO - {'precision': array([0.30637417, 0.15996358]), 'recall': array([0.26314853, 0.57474334]), 'ndcg': array([0.45947709, 0.66134102]), 'auc': array([0.])}
+2024-10-02 00:04:23,153 - root - INFO - EPOCH[153/200] all_loss: 0.055 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:04:33,853 - root - INFO - [testing at epoch-153]
+2024-10-02 00:04:33,853 - root - INFO - {'precision': array([0.30541391, 0.1599702 ]), 'recall': array([0.26248299, 0.57469874]), 'ndcg': array([0.45867633, 0.66143292]), 'auc': array([0.])}
+2024-10-02 00:04:33,854 - root - INFO - EPOCH[154/200] all_loss: 0.055 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:04:44,560 - root - INFO - [testing at epoch-154]
+2024-10-02 00:04:44,561 - root - INFO - {'precision': array([0.30536424, 0.15998344]), 'recall': array([0.26258168, 0.57494767]), 'ndcg': array([0.45843086, 0.66124454]), 'auc': array([0.])}
+2024-10-02 00:04:44,561 - root - INFO - EPOCH[155/200] all_loss: 0.054 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:04:55,232 - root - INFO - [testing at epoch-155]
+2024-10-02 00:04:55,232 - root - INFO - {'precision': array([0.30594371, 0.1599255 ]), 'recall': array([0.26270946, 0.57449073]), 'ndcg': array([0.45910772, 0.6614564 ]), 'auc': array([0.])}
+2024-10-02 00:04:55,233 - root - INFO - EPOCH[156/200] all_loss: 0.055 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:05:05,935 - root - INFO - [testing at epoch-156]
+2024-10-02 00:05:05,935 - root - INFO - {'precision': array([0.30540563, 0.16002815]), 'recall': array([0.26217413, 0.5752837 ]), 'ndcg': array([0.45813478, 0.66117182]), 'auc': array([0.])}
+2024-10-02 00:05:05,936 - root - INFO - EPOCH[157/200] all_loss: 0.054 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:05:16,601 - root - INFO - [testing at epoch-157]
+2024-10-02 00:05:16,601 - root - INFO - {'precision': array([0.30567053, 0.16010762]), 'recall': array([0.26276517, 0.57511867]), 'ndcg': array([0.45844518, 0.66110685]), 'auc': array([0.])}
+2024-10-02 00:05:16,602 - root - INFO - EPOCH[158/200] all_loss: 0.054 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:05:27,295 - root - INFO - [testing at epoch-158]
+2024-10-02 00:05:27,295 - root - INFO - {'precision': array([0.3055298, 0.1599702]), 'recall': array([0.26269487, 0.57449081]), 'ndcg': array([0.45836954, 0.66090836]), 'auc': array([0.])}
+2024-10-02 00:05:27,296 - root - INFO - EPOCH[159/200] all_loss: 0.054 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:05:38,035 - root - INFO - [testing at epoch-159]
+2024-10-02 00:05:38,035 - root - INFO - {'precision': array([0.30503311, 0.15992715]), 'recall': array([0.26222559, 0.57438791]), 'ndcg': array([0.45796597, 0.66080357]), 'auc': array([0.])}
+2024-10-02 00:05:38,036 - root - INFO - EPOCH[160/200] all_loss: 0.054 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:05:48,804 - root - INFO - [testing at epoch-160]
+2024-10-02 00:05:48,804 - root - INFO - {'precision': array([0.30491722, 0.15992881]), 'recall': array([0.26187702, 0.57437239]), 'ndcg': array([0.45831066, 0.6612534 ]), 'auc': array([0.])}
+2024-10-02 00:05:48,805 - root - INFO - EPOCH[161/200] all_loss: 0.054 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:05:59,519 - root - INFO - [testing at epoch-161]
+2024-10-02 00:05:59,519 - root - INFO - {'precision': array([0.30461921, 0.15987914]), 'recall': array([0.26168785, 0.57436867]), 'ndcg': array([0.45765416, 0.66074745]), 'auc': array([0.])}
+2024-10-02 00:05:59,520 - root - INFO - EPOCH[162/200] all_loss: 0.053 | time cost---Sampling: 0.13s--| 
+2024-10-02 00:06:10,148 - root - INFO - [testing at epoch-162]
+2024-10-02 00:06:10,148 - root - INFO - {'precision': array([0.30445364, 0.15985265]), 'recall': array([0.26179468, 0.57437693]), 'ndcg': array([0.45717176, 0.66035083]), 'auc': array([0.])}
+2024-10-02 00:06:10,149 - root - INFO - EPOCH[163/200] all_loss: 0.054 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:06:20,776 - root - INFO - [testing at epoch-163]
+2024-10-02 00:06:20,776 - root - INFO - {'precision': array([0.30525662, 0.15971026]), 'recall': array([0.2621172 , 0.57351916]), 'ndcg': array([0.45844724, 0.66088747]), 'auc': array([0.])}
+2024-10-02 00:06:20,777 - root - INFO - EPOCH[164/200] all_loss: 0.053 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:06:31,390 - root - INFO - [testing at epoch-164]
+2024-10-02 00:06:31,390 - root - INFO - {'precision': array([0.30528146, 0.15965397]), 'recall': array([0.26205859, 0.57355824]), 'ndcg': array([0.45771909, 0.66037927]), 'auc': array([0.])}
+2024-10-02 00:06:31,390 - root - INFO - EPOCH[165/200] all_loss: 0.053 | time cost---Sampling: 0.11s--| 
+2024-10-02 00:06:42,019 - root - INFO - [testing at epoch-165]
+2024-10-02 00:06:42,019 - root - INFO - {'precision': array([0.30449503, 0.15963079]), 'recall': array([0.26159916, 0.5735337 ]), 'ndcg': array([0.45700685, 0.65999955]), 'auc': array([0.])}
+2024-10-02 00:06:42,020 - root - INFO - EPOCH[166/200] all_loss: 0.053 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:06:52,754 - root - INFO - [testing at epoch-166]
+2024-10-02 00:06:52,754 - root - INFO - {'precision': array([0.30483444, 0.15976325]), 'recall': array([0.26196346, 0.57408301]), 'ndcg': array([0.45763215, 0.66041308]), 'auc': array([0.])}
+2024-10-02 00:06:52,755 - root - INFO - EPOCH[167/200] all_loss: 0.053 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:07:03,407 - root - INFO - [testing at epoch-167]
+2024-10-02 00:07:03,407 - root - INFO - {'precision': array([0.30502483, 0.1596904 ]), 'recall': array([0.26189254, 0.57386553]), 'ndcg': array([0.45790604, 0.66051858]), 'auc': array([0.])}
+2024-10-02 00:07:03,408 - root - INFO - EPOCH[168/200] all_loss: 0.052 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:07:14,017 - root - INFO - [testing at epoch-168]
+2024-10-02 00:07:14,018 - root - INFO - {'precision': array([0.3049255 , 0.15962914]), 'recall': array([0.26185752, 0.57370791]), 'ndcg': array([0.45762486, 0.66031159]), 'auc': array([0.])}
+2024-10-02 00:07:14,018 - root - INFO - EPOCH[169/200] all_loss: 0.053 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:07:24,679 - root - INFO - [testing at epoch-169]
+2024-10-02 00:07:24,680 - root - INFO - {'precision': array([0.30515728, 0.1595    ]), 'recall': array([0.26201094, 0.57320238]), 'ndcg': array([0.45774929, 0.66003532]), 'auc': array([0.])}
+2024-10-02 00:07:24,680 - root - INFO - EPOCH[170/200] all_loss: 0.052 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:07:35,301 - root - INFO - [testing at epoch-170]
+2024-10-02 00:07:35,301 - root - INFO - {'precision': array([0.30531457, 0.1595745 ]), 'recall': array([0.26197535, 0.57363813]), 'ndcg': array([0.45743841, 0.65982335]), 'auc': array([0.])}
+2024-10-02 00:07:35,302 - root - INFO - EPOCH[171/200] all_loss: 0.052 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:07:45,930 - root - INFO - [testing at epoch-171]
+2024-10-02 00:07:45,930 - root - INFO - {'precision': array([0.30536424, 0.15956788]), 'recall': array([0.26195403, 0.57352886]), 'ndcg': array([0.45782718, 0.6601299 ]), 'auc': array([0.])}
+2024-10-02 00:07:45,931 - root - INFO - EPOCH[172/200] all_loss: 0.052 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:07:56,570 - root - INFO - [testing at epoch-172]
+2024-10-02 00:07:56,570 - root - INFO - {'precision': array([0.30484272, 0.15941722]), 'recall': array([0.26156557, 0.57311038]), 'ndcg': array([0.45741753, 0.66003153]), 'auc': array([0.])}
+2024-10-02 00:07:56,571 - root - INFO - EPOCH[173/200] all_loss: 0.052 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:08:07,207 - root - INFO - [testing at epoch-173]
+2024-10-02 00:08:07,207 - root - INFO - {'precision': array([0.30538907, 0.15949834]), 'recall': array([0.26170037, 0.57317996]), 'ndcg': array([0.45857343, 0.66077674]), 'auc': array([0.])}
+2024-10-02 00:08:07,208 - root - INFO - EPOCH[174/200] all_loss: 0.051 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:08:17,841 - root - INFO - [testing at epoch-174]
+2024-10-02 00:08:17,841 - root - INFO - {'precision': array([0.30495033, 0.15950993]), 'recall': array([0.26163477, 0.57285867]), 'ndcg': array([0.45766299, 0.66005391]), 'auc': array([0.])}
+2024-10-02 00:08:17,842 - root - INFO - EPOCH[175/200] all_loss: 0.051 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:08:28,488 - root - INFO - [testing at epoch-175]
+2024-10-02 00:08:28,488 - root - INFO - {'precision': array([0.30485927, 0.1593096 ]), 'recall': array([0.26147512, 0.5725214 ]), 'ndcg': array([0.45773496, 0.66016677]), 'auc': array([0.])}
+2024-10-02 00:08:28,488 - root - INFO - EPOCH[176/200] all_loss: 0.051 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:08:39,140 - root - INFO - [testing at epoch-176]
+2024-10-02 00:08:39,140 - root - INFO - {'precision': array([0.3046606 , 0.15935927]), 'recall': array([0.26153365, 0.57260898]), 'ndcg': array([0.4573896 , 0.65987465]), 'auc': array([0.])}
+2024-10-02 00:08:39,141 - root - INFO - EPOCH[177/200] all_loss: 0.051 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:08:49,812 - root - INFO - [testing at epoch-177]
+2024-10-02 00:08:49,813 - root - INFO - {'precision': array([0.30536424, 0.15947517]), 'recall': array([0.26194653, 0.57259388]), 'ndcg': array([0.45795087, 0.65998459]), 'auc': array([0.])}
+2024-10-02 00:08:49,813 - root - INFO - EPOCH[178/200] all_loss: 0.051 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:09:00,476 - root - INFO - [testing at epoch-178]
+2024-10-02 00:09:00,476 - root - INFO - {'precision': array([0.30516556, 0.15930629]), 'recall': array([0.26197962, 0.57227905]), 'ndcg': array([0.45734141, 0.65941756]), 'auc': array([0.])}
+2024-10-02 00:09:00,477 - root - INFO - EPOCH[179/200] all_loss: 0.051 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:09:11,212 - root - INFO - [testing at epoch-179]
+2024-10-02 00:09:11,212 - root - INFO - {'precision': array([0.30537252, 0.15937914]), 'recall': array([0.26235102, 0.57263405]), 'ndcg': array([0.45771503, 0.65963389]), 'auc': array([0.])}
+2024-10-02 00:09:11,213 - root - INFO - EPOCH[180/200] all_loss: 0.051 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:09:21,923 - root - INFO - [testing at epoch-180]
+2024-10-02 00:09:21,923 - root - INFO - {'precision': array([0.30462748, 0.15923675]), 'recall': array([0.26171743, 0.57218465]), 'ndcg': array([0.45694847, 0.65935976]), 'auc': array([0.])}
+2024-10-02 00:09:21,924 - root - INFO - EPOCH[181/200] all_loss: 0.051 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:09:32,622 - root - INFO - [testing at epoch-181]
+2024-10-02 00:09:32,622 - root - INFO - {'precision': array([0.30471854, 0.15926821]), 'recall': array([0.26211011, 0.57228132]), 'ndcg': array([0.45700783, 0.65911484]), 'auc': array([0.])}
+2024-10-02 00:09:32,623 - root - INFO - EPOCH[182/200] all_loss: 0.051 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:09:43,358 - root - INFO - [testing at epoch-182]
+2024-10-02 00:09:43,358 - root - INFO - {'precision': array([0.30504139, 0.15932947]), 'recall': array([0.26226451, 0.57228016]), 'ndcg': array([0.45772987, 0.65958022]), 'auc': array([0.])}
+2024-10-02 00:09:43,359 - root - INFO - EPOCH[183/200] all_loss: 0.051 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:09:54,084 - root - INFO - [testing at epoch-183]
+2024-10-02 00:09:54,084 - root - INFO - {'precision': array([0.30489238, 0.15933113]), 'recall': array([0.26218179, 0.5721669 ]), 'ndcg': array([0.45746993, 0.65949576]), 'auc': array([0.])}
+2024-10-02 00:09:54,084 - root - INFO - EPOCH[184/200] all_loss: 0.051 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:10:04,791 - root - INFO - [testing at epoch-184]
+2024-10-02 00:10:04,791 - root - INFO - {'precision': array([0.30478477, 0.15931788]), 'recall': array([0.26196973, 0.57238491]), 'ndcg': array([0.45727028, 0.65939554]), 'auc': array([0.])}
+2024-10-02 00:10:04,792 - root - INFO - EPOCH[185/200] all_loss: 0.050 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:10:15,554 - root - INFO - [testing at epoch-185]
+2024-10-02 00:10:15,554 - root - INFO - {'precision': array([0.30451159, 0.15923841]), 'recall': array([0.26166954, 0.57202083]), 'ndcg': array([0.45676999, 0.65899379]), 'auc': array([0.])}
+2024-10-02 00:10:15,555 - root - INFO - EPOCH[186/200] all_loss: 0.050 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:10:26,275 - root - INFO - [testing at epoch-186]
+2024-10-02 00:10:26,275 - root - INFO - {'precision': array([0.30446192, 0.15924338]), 'recall': array([0.26121628, 0.57212763]), 'ndcg': array([0.45686692, 0.65922265]), 'auc': array([0.])}
+2024-10-02 00:10:26,276 - root - INFO - EPOCH[187/200] all_loss: 0.050 | time cost---Sampling: 0.13s--| 
+2024-10-02 00:10:36,954 - root - INFO - [testing at epoch-187]
+2024-10-02 00:10:36,954 - root - INFO - {'precision': array([0.30445364, 0.1590447 ]), 'recall': array([0.26172877, 0.57194357]), 'ndcg': array([0.45697229, 0.65916185]), 'auc': array([0.])}
+2024-10-02 00:10:36,955 - root - INFO - EPOCH[188/200] all_loss: 0.050 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:10:47,665 - root - INFO - [testing at epoch-188]
+2024-10-02 00:10:47,665 - root - INFO - {'precision': array([0.30403974, 0.15895199]), 'recall': array([0.26127058, 0.57095191]), 'ndcg': array([0.45665766, 0.658925  ]), 'auc': array([0.])}
+2024-10-02 00:10:47,666 - root - INFO - EPOCH[189/200] all_loss: 0.050 | time cost---Sampling: 0.13s--| 
+2024-10-02 00:10:58,320 - root - INFO - [testing at epoch-189]
+2024-10-02 00:10:58,321 - root - INFO - {'precision': array([0.30396523, 0.15884603]), 'recall': array([0.26103969, 0.57089976]), 'ndcg': array([0.45675832, 0.6590183 ]), 'auc': array([0.])}
+2024-10-02 00:10:58,322 - root - INFO - EPOCH[190/200] all_loss: 0.050 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:11:08,955 - root - INFO - [testing at epoch-190]
+2024-10-02 00:11:08,955 - root - INFO - {'precision': array([0.30397351, 0.15888411]), 'recall': array([0.26105406, 0.57106469]), 'ndcg': array([0.45630636, 0.6585375 ]), 'auc': array([0.])}
+2024-10-02 00:11:08,956 - root - INFO - EPOCH[191/200] all_loss: 0.050 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:11:19,595 - root - INFO - [testing at epoch-191]
+2024-10-02 00:11:19,595 - root - INFO - {'precision': array([0.30397351, 0.15887086]), 'recall': array([0.26101216, 0.57091236]), 'ndcg': array([0.45680404, 0.65897461]), 'auc': array([0.])}
+2024-10-02 00:11:19,596 - root - INFO - EPOCH[192/200] all_loss: 0.049 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:11:30,249 - root - INFO - [testing at epoch-192]
+2024-10-02 00:11:30,249 - root - INFO - {'precision': array([0.30338576, 0.15875662]), 'recall': array([0.26097657, 0.57043866]), 'ndcg': array([0.45605703, 0.65844563]), 'auc': array([0.])}
+2024-10-02 00:11:30,250 - root - INFO - EPOCH[193/200] all_loss: 0.049 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:11:40,870 - root - INFO - [testing at epoch-193]
+2024-10-02 00:11:40,871 - root - INFO - {'precision': array([0.30359272, 0.15885099]), 'recall': array([0.26106854, 0.57052518]), 'ndcg': array([0.45608952, 0.65850203]), 'auc': array([0.])}
+2024-10-02 00:11:40,871 - root - INFO - EPOCH[194/200] all_loss: 0.049 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:11:51,472 - root - INFO - [testing at epoch-194]
+2024-10-02 00:11:51,472 - root - INFO - {'precision': array([0.30346026, 0.15871192]), 'recall': array([0.2608704 , 0.57013353]), 'ndcg': array([0.45615834, 0.6584767 ]), 'auc': array([0.])}
+2024-10-02 00:11:51,473 - root - INFO - EPOCH[195/200] all_loss: 0.049 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:12:02,109 - root - INFO - [testing at epoch-195]
+2024-10-02 00:12:02,109 - root - INFO - {'precision': array([0.3031043 , 0.15867053]), 'recall': array([0.2605207 , 0.57019446]), 'ndcg': array([0.45544554, 0.65812118]), 'auc': array([0.])}
+2024-10-02 00:12:02,110 - root - INFO - EPOCH[196/200] all_loss: 0.049 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:12:12,841 - root - INFO - [testing at epoch-196]
+2024-10-02 00:12:12,841 - root - INFO - {'precision': array([0.30287252, 0.15879967]), 'recall': array([0.26034119, 0.57053677]), 'ndcg': array([0.4552822 , 0.65816857]), 'auc': array([0.])}
+2024-10-02 00:12:12,842 - root - INFO - EPOCH[197/200] all_loss: 0.049 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:12:23,477 - root - INFO - [testing at epoch-197]
+2024-10-02 00:12:23,477 - root - INFO - {'precision': array([0.30278146, 0.15870033]), 'recall': array([0.25984301, 0.5700018 ]), 'ndcg': array([0.45493459, 0.65797295]), 'auc': array([0.])}
+2024-10-02 00:12:23,478 - root - INFO - EPOCH[198/200] all_loss: 0.049 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:12:34,223 - root - INFO - [testing at epoch-198]
+2024-10-02 00:12:34,223 - root - INFO - {'precision': array([0.30323675, 0.15861258]), 'recall': array([0.26045885, 0.56998164]), 'ndcg': array([0.45558847, 0.65822598]), 'auc': array([0.])}
+2024-10-02 00:12:34,226 - root - INFO - EPOCH[199/200] all_loss: 0.049 | time cost---Sampling: 0.12s--| 
+2024-10-02 00:12:44,850 - root - INFO - [testing at epoch-199]
+2024-10-02 00:12:44,851 - root - INFO - {'precision': array([0.30241722, 0.15868377]), 'recall': array([0.25979557, 0.57020297]), 'ndcg': array([0.45490269, 0.65821618]), 'auc': array([0.])}
+2024-10-02 00:12:44,851 - root - INFO - EPOCH[200/200] all_loss: 0.048 | time cost---Sampling: 0.12s--| 

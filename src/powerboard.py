@@ -1,8 +1,3 @@
-"""
-@author:chenyankai, queyue
-@file:powerboard.py
-@time:2024/6/28
-"""
 import os
 import sys
 from os.path import join
