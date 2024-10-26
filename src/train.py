@@ -221,8 +221,11 @@ def vae_gcn_main():
     loss_vae = LOSS_F['vae'](vae)
     
     max_recall20 = 0
-    epsilon = 1.0
-    eps_decay = 1.0 / (board.args.epoch * board.args.eps_decay)
+    # epsilon = 1.0
+    # eps_decay = 1.0 / (board.args.epoch * board.args.eps_decay)
+    eps_decay = board.args.eps_decay
+    thold = board.args.thold
+    update = 0
     for epoch in range(board.args.epoch):
         """
         ********************* GCN Train **************************
@@ -241,34 +244,48 @@ def vae_gcn_main():
         if max_recall20 < results['recall'][0]:
             max_recall20 = results['recall'][0]
             logging.info(f'Summary at recall = {max_recall20}')
-        
+            
+            # Train CVAE when making progress
+            update = 0
+        else:
+            # Under specific prob whether to train CVAE when no progress is made
+            update = np.random.rand()
+            
         """
         ********************* CVAE Train **************************
         """
-        gcn.eval()
-        
-        with torch.no_grad():
-            user_emb, item_emb = gcn.aggregate_embed()
-            user_emb = gcn.pooling(user_emb)
-            item_emb = gcn.pooling(item_emb)
-        
-        for epoch2 in range(board.args.epoch2):
-            info = evals.Train_vae(data_loader=data_loader, vae=vae, user_emb=user_emb, item_emb=item_emb, 
-                                    loss_f=loss_vae, batch_size=board.args.train_batch, epoch=epoch2)
-            logging.info(f'CVAE EPOCH[{epoch2 + 1}/{board.args.epoch2}] {info} ')
-        
-        # Update adj matrix for GCN aggregation
-        if epsilon > 0:
-            epsilon -= (epsilon * eps_decay)
-        elif epsilon < 0:
-            epsilon = 0
-        with torch.no_grad():
-            new_graph = epsilon * gcn.Graph + (1 - epsilon) * evals.Weight_Inference(vae, user_emb, item_emb, data_loader)
-            del gcn.Graph 
-            torch.cuda.empty_cache()  
-            gcn.Graph = new_graph.coalesce()
+        if update <= thold:
+            gcn.eval()
+            
+            with torch.no_grad():
+                user_emb, item_emb = gcn.aggregate_embed()
+                user_emb = gcn.pooling(user_emb)
+                item_emb = gcn.pooling(item_emb)
+            
+            for epoch2 in range(board.args.epoch2):
+                info = evals.Train_vae(data_loader=data_loader, vae=vae, user_emb=user_emb, item_emb=item_emb, 
+                                        loss_f=loss_vae, batch_size=board.args.train_batch, epoch=epoch2)
+                logging.info(f'CVAE EPOCH[{epoch2 + 1}/{board.args.epoch2}] {info} ')
+            
+            # Update adj matrix for GCN aggregation
+            # if epsilon > 0:
+            #     epsilon -= (epsilon * eps_decay)
+            # elif epsilon < 0:
+            #     epsilon = 0
+            with torch.no_grad():
+                # new_graph = epsilon * gcn.Graph + (1 - epsilon) * evals.Weight_Inference(vae, user_emb, item_emb, data_loader)
+                new_graph = (1 - eps_decay) * gcn.Graph + eps_decay * evals.Weight_Inference(vae, user_emb, item_emb, data_loader)
+                del gcn.Graph 
+                torch.cuda.empty_cache()  
+                gcn.Graph = new_graph.coalesce()
+      
       
 if __name__ == '__main__':
-    # vanilla_gcn_train()
-    # pretrain_vae_main()
-    vae_gcn_main()
+    if board.args.enable_vae == True:
+        if board.args.pretrain_vae == True:
+            pretrain_vae_main()
+        else: 
+            vae_gcn_main()
+    else:
+        vanilla_gcn_train()
+    
