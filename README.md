@@ -6,7 +6,7 @@ This is the PyTorch implementation for the paper:
 
 ## To Start With
 
-Run the following commands to reproduce the performances of CAGED model reported in our paper. We provide the training code for CAGED-LightGCN and original LightGCN. Hyper-parameter arguments in the commands have been tested to be the optimal settings.
+Run the following commands to reproduce the performances of CAGED model reported in our paper. We provide the training code for `CAGED-LightGCN` and original `LightGCN`. Hyper-parameter arguments in the commands have been tested to be the optimal settings.
 
 <li> <b>CAGED-LightGCN training:</b>
   
