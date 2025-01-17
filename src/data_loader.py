@@ -83,7 +83,6 @@ class LoadData(Dataset):
 
         # pre-process
         self.all_pos, self.u_neighbors = self._get_user_posItems(list(range(self.n_users)))
-        # self.all_pos_user = self._get_item_posUsers(list(range(self.m_items)))
         
         self.test_dict = self._build_test()
         print(f"{self.data_name} is loaded")
@@ -106,8 +105,14 @@ class LoadData(Dataset):
     def get_neighbors(self):
         return self.u_neighbors
     
-    # def get_item_pos_user(self):
-    #     return self.all_pos_user
+    def get_root_degree(self):
+        degree = self.Graph.values()
+        degree = degree[degree != 0]
+        degree = 1.0 / degree
+        degree = degree.mean()
+
+        print(f"Mean square root dudi: {degree}")
+        return degree.item()
 
     def _build_test(self):
         """
@@ -131,13 +136,6 @@ class LoadData(Dataset):
             u_neighbors = torch.concat([u_neighbors, torch.stack((torch.full((len(u_pos_i),), user), torch.tensor(u_pos_i)), dim=1)])
             pos_items.append(u_pos_i)
         return pos_items, u_neighbors
-    
-    # def _get_item_posUsers(self, item_index):
-    #     pos_users = []
-    #     graph = self.user_item_net.transpose()
-    #     for item in item_index:
-    #         pos_users.append(graph[item].nonzero()[1])
-    #     return pos_users
 
     def _convert_sp_mat_to_sp_tensor(self, matrix):
         """
@@ -183,7 +181,6 @@ class LoadData(Dataset):
             self.Graph = self._convert_sp_mat_to_sp_tensor(norm_adj)
             self.Graph = self.Graph.coalesce().to(board.DEVICE)
         return self.Graph
-
 
     def load_graph_dropEdge(self):
         list = np.arange(self.train_instance_size)

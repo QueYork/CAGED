@@ -18,7 +18,7 @@ if not os.path.exists(FILE_PATH):
     os.makedirs(FILE_PATH, exist_ok=True)
 
 
-all_dataset = ['gowalla', 'yelp', 'book', 'movie', 'pinterest']
+all_dataset = ['gowalla', 'yelp', 'book', 'movie', 'pinterest', 'epinions']
 batch_ranking_list = []
 all_model = ['gcn']
 GPU = torch.cuda.is_available()

@@ -41,7 +41,7 @@ class VAELoss:
 
         return loss.cpu().item(), recon.cpu().item(), kld.cpu().item()
 
-def Train_vae(data_loader, vae, user_emb, item_emb, loss_f, batch_size, epoch):          
+def Train_vae(data_loader, vae, user_emb, item_emb, loss_f, batch_size):          
     vae.train()
 
     loss = []
@@ -67,16 +67,6 @@ def Train_vae(data_loader, vae, user_emb, item_emb, loss_f, batch_size, epoch):
     avg_kld  = np.mean(kld) / batch_size
     
     info = f'Avg loss: {avg_loss: .6f} | Avg recon loss: {avg_recon: .6f} | Avg kld loss: {avg_kld: .6f}'
-    
-    # vae.eval()
-    # with torch.no_grad():
-    #     print(f'CVAE EPOCH[{epoch + 1}/{num_epoch}]: Avg loss: {avg_loss: .3f} | Avg recon loss: {avg_recon: .3f} | Avg kld loss: {avg_kld: .3f}')
-    #     Is = [3264, 3361, 1251, 933, 998, 3784, 3657, 1192, 1640, 812, 110, 592, 1232, 2803, 918, 2615, 3896, 857]
-    #     u = user_emb[11].repeat((len(Is), 1))
-    #     i = item_emb[torch.LongTensor(Is).to(board.DEVICE)]
-    #     print(vae.get_scores(i, u))
-    # vae.train()
-    
     return info
     
 def Weight_Inference(vae, user_emb, item_emb, data_loader):

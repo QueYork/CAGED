@@ -36,7 +36,6 @@ class LightGCN(BasicModel):
 
         self.f = nn.Sigmoid()
         self.Graph = self.dataset.load_sparse_graph()
-        self.residual_coff = board.args.lambda_
 
     # Embedding aggregation
     def aggregate_embed(self): 
@@ -44,25 +43,12 @@ class LightGCN(BasicModel):
         item_embed = self.item_embed.weight # [#items, dim]
 
         all_emb = torch.cat([user_embed, item_embed])
-        initial_emb = nn.functional.normalize(all_emb)
-        # initial_emb = all_emb
-        emb_list = [all_emb]        
-                
-        # con_original_embed = torch.cat([user_embed, item_embed], dim=0) # [#users + #items, dim]
-        # con_embed_list = [con_original_embed] # [1, #users + #items, dim]
-        # con_embed = con_original_embed
+        emb_list = [all_emb]      
         for layer in range(self.num_layers):
-            all_emb = all_emb + self.residual_coff * initial_emb
-            # all_emb = nn.functional.normalize(all_emb)
             all_emb = torch.sparse.mm(self.Graph, all_emb)
-            # all_emb += self.residual_coff * (all_emb - initial_emb)
-            
             emb_list.append(all_emb)
-            # con_original_embed = torch.sparse.mm(self.Graph, con_original_embed) # [#users + #items, dim]
-            # con_embed_list.append(con_original_embed) # [1 + layer, #users + #items, dim]
-        
-        # con_embed_list = torch.stack(con_embed_list, dim=1)
         con_embed_list = torch.stack(emb_list, dim=1)
+        
         return con_embed_list[:self.num_users, :], con_embed_list[self.num_users:, :] # [n_entity, num_layer + 1, dim]
     
     def pooling(self, embed: torch.Tensor):
@@ -120,6 +106,7 @@ class ConditionalVAE(BasicModel):
         self.latent_dim = board.args.latent_dim
         
         self.sc_var = board.args.sc_var
+        self.beta = board.args.beta
         
         # Encoder
         self.encoder = nn.Sequential()
@@ -128,9 +115,10 @@ class ConditionalVAE(BasicModel):
                 self.encoder.add_module(name="L{:d}".format(i), module=nn.Linear(self.input_dim + self.condition_dim, dim))
             else:
                 self.encoder.add_module(name="L{:d}".format(i), module=nn.Linear(self.hidden_dim[i-1], dim))
-            if i + 1 < len(self.hidden_dim):
-                self.encoder.add_module(name="A{:d}".format(i), module=nn.ReLU()) 
+            if i + 1 < len(self.hidden_dim): 
+                # self.encoder.add_module(name="A{:d}".format(i), module=nn.ReLU()) 
                 # self.encoder.add_module(name="D{:d}".format(i), module=nn.Dropout(0.1))   
+                self.encoder.add_module(name="A{:d}".format(i), module=nn.Tanh()) 
         print("CVAE Encoder Structure: ", self.encoder)
         
         # Encoder output: z's mean and log var
@@ -142,14 +130,16 @@ class ConditionalVAE(BasicModel):
         for i, dim in enumerate(self.hidden_dim):
             if i == 0:
                 self.decoder.add_module(name="L{:d}".format(i), module=nn.Linear(self.latent_dim + self.condition_dim, dim))
-                self.decoder.add_module(name="A{:d}".format(i), module=nn.ReLU()) 
+                # self.decoder.add_module(name="A{:d}".format(i), module=nn.ReLU()) 
+                self.decoder.add_module(name="A{:d}".format(i), module=nn.Tanh()) 
                 # self.decoder.add_module(name="D{:d}".format(i), module=nn.Dropout(0.1))
             else: 
                 self.decoder.add_module(name="L{:d}".format(i), module=nn.Linear(self.hidden_dim[i-1], dim))
-                self.decoder.add_module(name="A{:d}".format(i), module=nn.ReLU()) 
+                # self.decoder.add_module(name="A{:d}".format(i), module=nn.ReLU()) 
+                self.decoder.add_module(name="A{:d}".format(i), module=nn.Tanh()) 
                 # self.decoder.add_module(name="D{:d}".format(i), module=nn.Dropout(0.1))
         self.decoder.add_module(name="L{:d}".format(len(self.hidden_dim)), module=nn.Linear(self.hidden_dim[-1], self.input_dim))
-        self.decoder.add_module(name="A{:d}".format(len(self.hidden_dim)), module=nn.Sigmoid())
+        # self.decoder.add_module(name="A{:d}".format(len(self.hidden_dim)), module=nn.Tanh())
         print("CVAE Decoder Structure", self.decoder)
         
     def encode(self, x, u):
@@ -169,8 +159,10 @@ class ConditionalVAE(BasicModel):
         return self.decoder(z_u)
     
     def forward(self, x, u):        # (x, u) pairs
-        x_sig = torch.sigmoid(x)
-        u_sig = torch.sigmoid(u)
+        # x_sig = torch.tanh(x)
+        # u_sig = torch.tanh(u)
+        x_sig = x
+        u_sig = u
         
         mu, logvar = self.encode(x_sig, u_sig)
         z = self.reparameterize(mu, logvar)
@@ -184,7 +176,8 @@ class ConditionalVAE(BasicModel):
     
     def get_scores(self, x, u):  
         recon_x, x_sig, mu, logvar = self.forward(x, u)
-        scores = F.mse_loss(recon_x, x_sig, reduction='none') - 0.5 * (1 + logvar - mu.pow(2) - logvar.exp())
+        scores = self.sc_var * F.mse_loss(recon_x, x_sig, reduction='none') - self.beta * 0.5 * (1 + logvar - mu.pow(2) - logvar.exp())
         scores = torch.sum(scores, dim=1)
-        return self.sc_var*(-scores).exp()
+        scores = (-scores).exp()
+        return scores
     
