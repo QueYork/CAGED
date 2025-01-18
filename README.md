@@ -19,9 +19,9 @@ python train.py --dataset epinions --lr 1e-3 --weight 2e-4 --lr2 1e-4 --eps_deca
 <li> <b>LightGCN baseline training:</b>
   
 ```
-python train.py --dataset movie --enable_vae 0 --lr 5e-4 --weight 1e-3 --epoch 800
-python train.py --dataset pinterest --enable_vae 0 --lr 5e-4 --weight 1e-3 --epoch 800
-python train.py --dataset epinions --enable_vae 0 --lr 1e-3 --weight 2e-4 --epoch 800
+python train.py --dataset movie --enable_caged 0 --lr 5e-4 --weight 1e-3 --epoch 800
+python train.py --dataset pinterest --enable_caged 0 --lr 5e-4 --weight 1e-3 --epoch 800
+python train.py --dataset epinions --enable_caged 0 --lr 1e-3 --weight 2e-4 --epoch 800
 ```
 
 Thank you for your interest in our work!
