@@ -25,7 +25,7 @@ class GCNLoss:
 
         return loss.cpu().item()
     
-class VAELoss:
+class cagedLoss:
     def __init__(self, model):
         self.model = model
         self.lr = board.args.lr2
@@ -41,8 +41,8 @@ class VAELoss:
 
         return loss.cpu().item(), recon.cpu().item(), kld.cpu().item()
 
-def Train_vae(data_loader, vae, user_emb, item_emb, loss_f, batch_size):          
-    vae.train()
+def Train_caged(data_loader, caged, user_emb, item_emb, loss_f, batch_size):          
+    caged.train()
 
     loss = []
     recon = []
@@ -69,8 +69,8 @@ def Train_vae(data_loader, vae, user_emb, item_emb, loss_f, batch_size):
     info = f'Avg loss: {avg_loss: .6f} | Avg recon loss: {avg_recon: .6f} | Avg kld loss: {avg_kld: .6f}'
     return info
     
-def Weight_Inference(vae, user_emb, item_emb, data_loader):
-    vae.eval()
+def Weight_Inference(caged, user_emb, item_emb, data_loader):
+    caged.eval()
     
     # Initial empty adj matrix
     GraphSize = torch.Size([user_emb.shape[0] + item_emb.shape[0], user_emb.shape[0] + item_emb.shape[0]])  
@@ -83,8 +83,8 @@ def Weight_Inference(vae, user_emb, item_emb, data_loader):
         
         # Scores condition on user/item
         with torch.no_grad():
-            scores_con_user = vae.get_scores(x=item_emb[item], u=user_emb[user])
-            scores_con_item = vae.get_scores(x=user_emb[user], u=item_emb[item])
+            scores_con_user = caged.get_scores(x=item_emb[item], u=user_emb[user])
+            scores_con_item = caged.get_scores(x=user_emb[user], u=item_emb[item])
         
         # Concate 2 types of scores
         item_coors = item + user_emb.shape[0]

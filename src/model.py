@@ -94,9 +94,9 @@ class LightGCN(BasicModel):
         return scores
 
 
-class ConditionalVAE(BasicModel):
+class caged(BasicModel):
     def __init__(self):
-        super(ConditionalVAE, self).__init__()
+        super(caged, self).__init__()
         self.__init_model()
 
     def __init_model(self):
@@ -119,7 +119,7 @@ class ConditionalVAE(BasicModel):
                 # self.encoder.add_module(name="A{:d}".format(i), module=nn.ReLU()) 
                 # self.encoder.add_module(name="D{:d}".format(i), module=nn.Dropout(0.1))   
                 self.encoder.add_module(name="A{:d}".format(i), module=nn.Tanh()) 
-        print("CVAE Encoder Structure: ", self.encoder)
+        print("CAGED Encoder Structure: ", self.encoder)
         
         # Encoder output: z's mean and log var
         self.fc_mu = nn.Linear(self.hidden_dim[-1], self.latent_dim)
@@ -140,7 +140,7 @@ class ConditionalVAE(BasicModel):
                 # self.decoder.add_module(name="D{:d}".format(i), module=nn.Dropout(0.1))
         self.decoder.add_module(name="L{:d}".format(len(self.hidden_dim)), module=nn.Linear(self.hidden_dim[-1], self.input_dim))
         # self.decoder.add_module(name="A{:d}".format(len(self.hidden_dim)), module=nn.Tanh())
-        print("CVAE Decoder Structure", self.decoder)
+        print("CAGED Decoder Structure", self.decoder)
         
     def encode(self, x, u):
         x_u = torch.cat([x, u], dim=1)  
