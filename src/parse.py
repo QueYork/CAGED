@@ -19,14 +19,14 @@ def parse_args():
     parse.add_argument('--topks', nargs='+', type=int, default=[20, 100], help='top@k test list') 
     
     # adjustable
-    parse.add_argument('--enable_vae', type=int, default=1, help='enable vae, set to 0 leads to vanilla lightgcn training')
+    parse.add_argument('--enable_caged', type=int, default=1, help='enable caged, set to 0 leads to vanilla lightgcn training')
     parse.add_argument('--epoch', type=int, default=1000, help='epoch of lightgcn training')
-    parse.add_argument('--epoch2', type=int, default=1, help='epoch of vae training')
+    parse.add_argument('--epoch2', type=int, default=1, help='epoch of caged training')
     parse.add_argument('--lr', type=float, default=5e-4, help='learning rate of lightgcn')
-    parse.add_argument('--lr2', type=float, default=5e-4, help='learning rate of vae')
+    parse.add_argument('--lr2', type=float, default=5e-4, help='learning rate of caged')
     parse.add_argument('--weight', type=float, default=1e-4, help='the weight of l2 norm')     
-    parse.add_argument('--hidden_dim', nargs='+', type=int, default=[512, 1024, 512], help='vae neuron number')
-    parse.add_argument('--sc_var', type=float, default=1, help='vae score variance')
+    parse.add_argument('--hidden_dim', nargs='+', type=int, default=[512, 1024, 512], help='caged neuron number')
+    parse.add_argument('--sc_var', type=float, default=1, help='caged score variance')
     parse.add_argument('--eps_decay', type=float, default=5e-4, help='epsilon decay ratio')
     parse.add_argument('--beta', type=float, default=1, help='kl score amplifier')
     

@@ -22,11 +22,11 @@ import src.model as model
 
 MODEL = {
     'gcn': model.LightGCN,
-    'vae': model.ConditionalVAE
+    'caged': model.caged
 }
 LOSS_F = {
     'gcn': evals.GCNLoss,
-    'vae': evals.VAELoss
+    'caged': evals.cagedLoss
 }
 
 def main():
@@ -36,8 +36,8 @@ def main():
     # Load dataset
     dataset = Data_Loader.LoadData(data_name=board.args.dataset)
     u_neighbors = dataset.get_neighbors()
-    dataset_vae = torch.utils.data.TensorDataset(u_neighbors[:, 0], u_neighbors[:, 1])
-    data_loader = torch.utils.data.DataLoader(dataset_vae, batch_size=board.args.train_batch, 
+    dataset_caged = torch.utils.data.TensorDataset(u_neighbors[:, 0], u_neighbors[:, 1])
+    data_loader = torch.utils.data.DataLoader(dataset_caged, batch_size=board.args.train_batch, 
                                               shuffle=True, generator=torch.Generator().manual_seed(board.SEED))
 
     # log file path
@@ -62,10 +62,10 @@ def main():
     gcn = MODEL[board.args.model](dataset=dataset).to(board.DEVICE)
     loss_gcn = LOSS_F[board.args.model](gcn)
     
-    # Initialize vae 
-    vae = MODEL['vae']()
-    vae = vae.to(board.DEVICE)
-    loss_vae = LOSS_F['vae'](vae)
+    # Initialize caged 
+    caged = MODEL['caged']()
+    caged = caged.to(board.DEVICE)
+    loss_caged = LOSS_F['caged'](caged)
     
     max_recall20 = 0
     max_info = None
@@ -93,9 +93,9 @@ def main():
             logging.info(f'Summary at recall = {max_recall20}')
             
             """
-            ********************* CVAE Train (only enable when making progress) **************************
+            ********************* CAGED Train (only enable when making progress) **************************
             """
-            if board.args.enable_vae:
+            if board.args.enable_caged:
                 gcn.eval()
                 
                 with torch.no_grad():
@@ -104,12 +104,12 @@ def main():
                     item_emb = gcn.pooling(item_emb)
                 
                 for epoch2 in range(board.args.epoch2):
-                    info = evals.Train_vae(data_loader=data_loader, vae=vae, user_emb=user_emb, item_emb=item_emb, 
-                                            loss_f=loss_vae, batch_size=board.args.train_batch)
-                    logging.info(f'CVAE EPOCH[{epoch2 + 1}/{board.args.epoch2}] {info} ')
+                    info = evals.Train_caged(data_loader=data_loader, caged=caged, user_emb=user_emb, item_emb=item_emb, 
+                                            loss_f=loss_caged, batch_size=board.args.train_batch)
+                    logging.info(f'CAGED EPOCH[{epoch2 + 1}/{board.args.epoch2}] {info} ')
                 
                 with torch.no_grad():
-                    new_graph = (1 - eps_decay) * gcn.Graph + eps_decay * weight_graph * evals.Weight_Inference(vae, user_emb, item_emb, data_loader)
+                    new_graph = (1 - eps_decay) * gcn.Graph + eps_decay * weight_graph * evals.Weight_Inference(caged, user_emb, item_emb, data_loader)
                     del gcn.Graph 
                     torch.cuda.empty_cache()  
                     gcn.Graph = new_graph.coalesce()
