@@ -12,7 +12,7 @@ Run the following commands to reproduce the performances of CAGED model reported
   
 ```
 python train.py --dataset movie --lr 5e-4 --weight 1e-3 --lr2 1e-4 --eps_decay 5e-4 --sc_var 1 --beta 0 --epoch 1000
-python train.py --dataset pinterest --lr 5e-4 --weight 1e-3 --lr2 5e-4 --eps_decay 5e-4 --sc_var 1 --beta 0 --epoch 1000
+python train.py --dataset pinterest --lr 5e-4 --weight 1e-3 --lr2 5e-4 --eps_decay 5e-4 --sc_var 1 --beta 0 --epoch 800
 python train.py --dataset epinions --lr 1e-3 --weight 2e-4 --lr2 1e-4 --eps_decay 1e-2 --sc_var 1.2 --beta 1 --epoch 1000
 ```
 
