@@ -2,7 +2,7 @@
  
 This is the PyTorch implementation for the paper:
 
-> Causality-aware Graph Aggregation Weight Estimator for Popularity Debiasing in Top-K Recommendation
+> Yue Que, Yingyi Zhang, Xiangyu Zhao, Chen Ma (2025). Causality-aware Graph Aggregation Weight Estimator for Popularity Debiasing in Top-K Recommendation. In CIKM'25, Seoul, Korea, Nov 10-14, 2025. [Paper link](https://arxiv.org/abs/2510.04502).
 
 ## To Start With
 
@@ -22,6 +22,27 @@ python train.py --dataset epinions --lr 1e-3 --weight 2e-4 --lr2 1e-4 --eps_deca
 python train.py --dataset movie --enable_caged 0 --lr 5e-4 --weight 1e-3 --epoch 800
 python train.py --dataset pinterest --enable_caged 0 --lr 5e-4 --weight 1e-3 --epoch 800
 python train.py --dataset epinions --enable_caged 0 --lr 1e-3 --weight 2e-4 --epoch 800
+```
+
+## Citation
+Please kindly cite our paper if you find this code useful for your research:
+
+```
+@inproceedings{caged2025,
+author = {Que, Yue and Zhang, Yingyi and Zhao, Xiangyu and Ma, Chen},
+title = {Causality-aware Graph Aggregation Weight Estimator for Popularity Debiasing in Top-K Recommendation},
+year = {2025},
+isbn = {9798400720406},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3746252.3761155},
+doi = {10.1145/3746252.3761155},
+booktitle = {Proceedings of the 34th ACM International Conference on Information and Knowledge Management},
+pages = {2471–2481},
+numpages = {11},
+location = {Seoul, Republic of Korea},
+series = {CIKM '25}
+}
 ```
 
 Thank you for your interest in our work!
